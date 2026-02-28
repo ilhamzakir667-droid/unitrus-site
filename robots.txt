@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://unitrus.vercel.app/sitemap.xml
+Sitemap: https://unitrus.ru/sitemap.xml
