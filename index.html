@@ -279,8 +279,15 @@
   background: rgba(255,106,26,.08);
   padding: 7px 10px;
   border-radius: 999px;
+  
+  cursor:pointer;
+transition:.2s ease;
 }
-
+.catalog-card__body span:hover{
+transform:translateY(-1px);
+border-color: rgba(255,106,26,.45);
+background: rgba(255,106,26,.14);
+}
 @media (max-width: 1100px){
   .catalog-grid{
     grid-template-columns: repeat(2, 1fr);
@@ -697,77 +704,95 @@ text-align:center;
     </div>
 
     <div class="catalog-grid">
+
       <article class="catalog-card">
-        <img src="assets/catalog-tshirts.jpg" alt="Футболки и поло UNITRUS"onclick="openLightbox(this.src)">
+        <img src="assets/catalog-tshirts.jpg" alt="Футболки и поло UNITRUS" onclick="openLightbox(this.src)">
         <div class="catalog-card__body">
           <h3>Футболки и поло</h3>
           <p>Базовые модели для корпоративного мерча, мероприятий, команд и брендов.</p>
-          <span>Футболки • Поло • Разные ткани</span>
+          <span onclick="openLightbox('assets/catalog-tshirts.jpg')" style="cursor:pointer;">
+            Футболки • Поло • Разные ткани
+          </span>
         </div>
       </article>
 
       <article class="catalog-card">
-        <img src="assets/catalog-hoodie.jpg" alt="Худи UNITRUS"onclick="openLightbox(this.src)">
+        <img src="assets/catalog-hoodie.jpg" alt="Худи UNITRUS" onclick="openLightbox(this.src)">
         <div class="catalog-card__body">
           <h3>Худи</h3>
           <p>Базовые и премиальные худи для корпоративного мерча, команд и повседневной формы.</p>
-          <span>Печать • Вышивка • Нашивки</span>
+          <span onclick="openLightbox('assets/catalog-hoodie.jpg')" style="cursor:pointer;">
+            Печать • Вышивка • Нашивки
+          </span>
         </div>
       </article>
 
       <article class="catalog-card">
-        <img src="assets/catalog-zip.jpg" alt="Кофты на молнии UNITRUS"onclick="openLightbox(this.src)">
+        <img src="assets/catalog-zip.jpg" alt="Кофты на молнии UNITRUS" onclick="openLightbox(this.src)">
         <div class="catalog-card__body">
           <h3>Кофты на молнии</h3>
           <p>Универсальная модель для брендов и команд с аккуратной посадкой и плотной тканью.</p>
-          <span>Повседневная носка • Команды • Мероприятия</span>
+          <span onclick="openLightbox('assets/catalog-zip.jpg')" style="cursor:pointer;">
+            Повседневная носка • Команды • Мероприятия
+          </span>
         </div>
       </article>
 
       <article class="catalog-card">
-        <img src="assets/catalog-windbreaker.jpg" alt="Ветровки UNITRUS"onclick="openLightbox(this.src)">
+        <img src="assets/catalog-windbreaker.jpg" alt="Ветровки UNITRUS" onclick="openLightbox(this.src)">
         <div class="catalog-card__body">
           <h3>Ветровки</h3>
           <p>Лёгкие брендированные ветровки для мероприятий, персонала и командных комплектов.</p>
-          <span>Печать • Вышивка • Несколько цветов</span>
+          <span onclick="openLightbox('assets/catalog-windbreaker.jpg')" style="cursor:pointer;">
+            Печать • Вышивка • Несколько цветов
+          </span>
         </div>
       </article>
 
       <article class="catalog-card">
-        <img src="assets/catalog-sport.jpg" alt="Спортивная форма UNITRUS"onclick="openLightbox(this.src)">
+        <img src="assets/catalog-sport.jpg" alt="Спортивная форма UNITRUS" onclick="openLightbox(this.src)">
         <div class="catalog-card__body">
           <h3>Спортивная форма</h3>
           <p>Форма для клубов, турниров, школьных и корпоративных команд с персонализацией.</p>
-          <span>Имя • Номер • Логотип команды</span>
+          <span onclick="openLightbox('assets/catalog-sport.jpg')" style="cursor:pointer;">
+            Имя • Номер • Логотип команды
+          </span>
         </div>
       </article>
 
       <article class="catalog-card">
-        <img src="assets/catalog-headwear.jpg" alt="Головные уборы UNITRUS"onclick="openLightbox(this.src)">
+        <img src="assets/catalog-headwear.jpg" alt="Головные уборы UNITRUS" onclick="openLightbox(this.src)">
         <div class="catalog-card__body">
           <h3>Головные уборы</h3>
           <p>Бейсболки, trucker, панамы и другие варианты брендированных головных уборов.</p>
-          <span>Вышивка • Печать • Разные модели</span>
+          <span onclick="openLightbox('assets/catalog-headwear.jpg')" style="cursor:pointer;">
+            Вышивка • Печать • Разные модели
+          </span>
         </div>
       </article>
 
       <article class="catalog-card">
-        <img src="assets/catalog-backpack.jpg" alt="Рюкзаки UNITRUS"onclick="openLightbox(this.src)">
+        <img src="assets/catalog-backpack.jpg" alt="Рюкзаки UNITRUS" onclick="openLightbox(this.src)">
         <div class="catalog-card__body">
           <h3>Рюкзаки</h3>
           <p>Функциональные рюкзаки для сотрудников, спорта, команд и брендированных наборов.</p>
-          <span>Городские • Спортивные • С логотипом</span>
+          <span onclick="openLightbox('assets/catalog-backpack.jpg')" style="cursor:pointer;">
+            Городские • Спортивные • С логотипом
+          </span>
         </div>
       </article>
 
       <article class="catalog-card">
-        <img src="assets/catalog-bag.jpg" alt="Сумки UNITRUS"onclick="openLightbox(this.src)">
+        <img src="assets/catalog-bag.jpg" alt="Сумки UNITRUS" onclick="openLightbox(this.src)">
         <div class="catalog-card__body">
           <h3>Сумки</h3>
           <p>Спортивные и дорожные сумки для команд, корпоративных подарков и бренд-комплектов.</p>
-          <span>Спорт • Поездки • Мерч-наборы</span>
+          <span onclick="openLightbox('assets/catalog-bag.jpg')" style="cursor:pointer;">
+            Спорт • Поездки • Мерч-наборы
+          </span>
         </div>
       </article>
+
     </div>
   </div>
 </section>
@@ -865,6 +890,7 @@ document.getElementById("success-message").style.display="none";
 </body>
 
 </html>
+
 
 
 
