@@ -75,6 +75,8 @@
       color:var(--text);
       transition:.18s ease;
       white-space:nowrap;
+
+      box-shadow:0 8px 30px rgba(255,106,26,.25);
     }
     .btn:hover{transform:translateY(-1px); border-color:rgba(255,106,26,.7)}
     .btn.secondary{
@@ -111,9 +113,16 @@
       background: rgba(0,0,0,.25);
       color:var(--muted);
       font-size:13px;
+
+      cursor:pointer;
+      transition:.2s ease;
     }
     .chip b{color:var(--text); font-weight:800}
 
+    .chip:hover{
+    transform:translateY(-1px);
+    border-color:rgba(255,106,26,.45);
+    }
     .heroVisual{
       position:relative;
       min-height:360px;
@@ -552,12 +561,24 @@ text-align:center;
 <div class="hint">⚡ Ответим и сделаем расчёт за 15 минут</div>
 
         <div class="kpis">
-          <div class="chip"><b>Разная</b> плотность</div>
-          <div class="chip"><b>Худи</b> / футболки</div>
-          <div class="chip"><b>Мерч</b> для команд</div>
-          <div class="chip"><b>Казань</b> • Россия</div>
-        </div>
-      </div>
+
+<a href="#catalog" class="chip">
+<b>Разная</b> плотность
+</a>
+
+<a href="#catalog" class="chip">
+<b>Худи</b> / футболки
+</a>
+
+<a href="#catalog" class="chip">
+<b>Мерч</b> для команд
+</a>
+
+<div class="chip">
+<b>Казань</b> • Россия
+</div>
+
+</div>
 
       <div class="card heroVisual" aria-label="UNITRUS hero">
         <div class="badge">
@@ -890,6 +911,7 @@ document.getElementById("success-message").style.display="none";
 </body>
 
 </html>
+
 
 
 
