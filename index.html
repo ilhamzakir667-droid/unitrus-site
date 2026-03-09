@@ -179,7 +179,60 @@
     }
     .contactBox{padding:18px; display:grid; gap:10px;}
     .hint{font-size:12px; color:var(--muted)}
+<section class="leadform" id="leadform">
+  <div class="wrap">
+    <h2>Запросить расчёт</h2>
+    <p class="leadform-sub">
+      Оставьте контакты и коротко опишите задачу. Мы свяжемся с вами и подготовим расчёт.
+    </p>
 
+    <form action="https://formsubmit.co/sport.merch@inbox.ru" method="POST" class="quote-form">
+      <input type="hidden" name="_subject" value="Новая заявка с сайта UNITRUS">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://unitrus.ru/?sent=1">
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Имя</label>
+          <input id="name" name="Имя" type="text" placeholder="Ваше имя" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Телефон</label>
+          <input id="phone" name="Телефон" type="tel" placeholder="+7 (999) 999-99-99" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="field">
+          <label for="product">Что интересует</label>
+          <select id="product" name="Интерес">
+            <option>Худи</option>
+            <option>Футболки и поло</option>
+            <option>Кофты на молнии</option>
+            <option>Ветровки</option>
+            <option>Спортивная форма</option>
+            <option>Головные уборы</option>
+            <option>Рюкзаки</option>
+            <option>Сумки</option>
+            <option>Другое</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">Комментарий</label>
+        <textarea id="message" name="Комментарий" rows="5" placeholder="Опишите, что нужно: тираж, изделие, сроки, нанесение"></textarea>
+      </div>
+
+      <button type="submit" class="btn">Отправить заявку</button>
+    </form>
+  </div>
+</section>
     footer{
       padding:34px 0 44px;
       border-top:1px solid var(--line);
@@ -348,7 +401,78 @@
     border:1px solid rgba(255,255,255,0,06);
     border-radius:18px;
     radding:28px;
+  }.leadform{
+  padding: 44px 0 60px;
+}
+
+.leadform h2{
+  margin: 0 0 10px;
+}
+
+.leadform-sub{
+  margin: 0 0 20px;
+  color: var(--muted);
+  max-width: 760px;
+}
+
+.quote-form{
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.form-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.field{
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.field label{
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.field input,
+.field select,
+.field textarea{
+  width: 100%;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 14px 14px;
+  font: inherit;
+  outline: none;
+}
+
+.field textarea{
+  resize: vertical;
+  min-height: 120px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color: rgba(255,106,26,.55);
+  box-shadow: 0 0 0 3px rgba(255,106,26,.10);
+}
+
+@media (max-width: 720px){
+  .form-grid{
+    grid-template-columns: 1fr;
   }
+
+  .quote-form{
+    padding: 16px;
+  }
+}
   </style>
   <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -646,6 +770,7 @@ function closeLightbox(){
 </body>
 
 </html>
+
 
 
 
