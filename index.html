@@ -478,6 +478,24 @@
   .quote-form{
     padding: 16px;
   }
+}.tg-float{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#ff6a1a;
+color:white;
+padding:14px 18px;
+border-radius:30px;
+font-weight:600;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+z-index:999;
+transition:all .2s;
+}
+
+.tg-float:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 30px rgba(0,0,0,.35);
 }
   </style>
   <!-- Yandex.Metrika counter -->
@@ -521,7 +539,7 @@
         </p>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn" href="#contact">Связаться</a>
+         <a class="btn" href="#leadform">Получить расчёт</a>
           <a class="btn secondary" href="#products">Смотреть продукт</a>
         </div>
 
@@ -773,6 +791,9 @@ function closeLightbox(){
   document.getElementById('lightbox').classList.remove('show');
 }
 </script>
+  <a href="https://t.me/unitrusss" class="tg-float" target="_blank">
+💬 Написать
+</a>
 </body>
 
 </html>
