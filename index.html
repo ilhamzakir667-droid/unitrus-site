@@ -294,6 +294,36 @@
   .catalog-card__body p{
     min-height: auto;
   }
+}.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.lightbox.show{
+  display:flex;
+}
+
+.lightbox-img{
+  max-width:95%;
+  max-height:90%;
+  border-radius:14px;
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.lightbox-close{
+  position:absolute;
+  top:16px;
+  right:22px;
+  font-size:42px;
+  color:#fff;
+  line-height:1;
+  cursor:pointer;
 }
   </style>
   <!-- Yandex.Metrika counter -->
@@ -591,6 +621,7 @@ function closeLightbox(){
 </body>
 
 </html>
+
 
 
 
