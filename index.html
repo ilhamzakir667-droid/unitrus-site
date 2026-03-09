@@ -183,7 +183,18 @@
       .heroGrid, .split, .gallery, .cta{grid-template-columns:1fr}
       .heroVisual{min-height:320px}
       .img{height:460px}
-      .navlinks{display:none}
+     .navlinks{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  white-space:nowrap;
+  padding:8px 0 2px;
+  scrollbar-width:none;
+}
+
+.navlinks::-webkit-scrollbar{
+  display:none;
+}
       .grid3{grid-template-columns:1fr}
     }.catalog{
   padding: 72px 0;
@@ -622,6 +633,7 @@ function closeLightbox(){
 </body>
 
 </html>
+
 
 
 
