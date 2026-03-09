@@ -482,6 +482,23 @@ box-shadow:0 15px 30px rgba(0,0,0,.35);
   .form-grid{
     grid-template-columns:1fr;
   }
+  }
+    
+  .success-message{
+position:fixed;
+top:30px;
+left:50%;
+transform:translateX(-50%);
+background:#14161c;
+border:1px solid rgba(255,255,255,.15);
+padding:18px 28px;
+border-radius:14px;
+color:#fff;
+font-size:16px;
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+display:none;
+z-index:9999;
+text-align:center;
 }
   </style>
   <!-- Yandex.Metrika counter -->
@@ -769,6 +786,7 @@ box-shadow:0 15px 30px rgba(0,0,0,.35);
       <input type="hidden" name="_subject" value="Новая заявка с сайта UNITRUS">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://unitrus.ru/?sent=1">
 
       <div class="form-grid">
         <div class="field">
@@ -835,9 +853,23 @@ function closeLightbox(){
   <a href="https://t.me/unitrusss" class="tg-float" target="_blank">
 💬 Написать
 </a>
+  <div id="success-message" class="success-message">
+✅ Заявка отправлена<br>
+Мы свяжемся с вами в течение 15 минут
+</div>
+  <script>
+if(window.location.search.includes("sent=1")){
+document.getElementById("success-message").style.display="block";
+
+setTimeout(function(){
+document.getElementById("success-message").style.display="none";
+},5000);
+}
+</script>
 </body>
 
 </html>
+
 
 
 
