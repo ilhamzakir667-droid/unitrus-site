@@ -494,7 +494,7 @@
 
     <div class="catalog-grid">
       <article class="catalog-card">
-        <img src="assets/catalog-tshirts.jpg" alt="Футболки и поло UNITRUS">
+        <img src="assets/catalog-tshirts.jpg" alt="Футболки и поло UNITRUS"onclick="openLightbox(this.src)">
         <div class="catalog-card__body">
           <h3>Футболки и поло</h3>
           <p>Базовые модели для корпоративного мерча, мероприятий, команд и брендов.</p>
@@ -573,10 +573,25 @@
       <div style="opacity:.9">Корпоративная одежда и мерч • Казань • Россия</div>
     </div>
   </footer>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" class="lightbox-img" src="">
+</div>
 
+<script>
+function openLightbox(src){
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('show');
+}
+
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('show');
+}
+</script>
 </body>
 
 </html>
+
 
 
 
