@@ -61,7 +61,7 @@
       position:sticky; top:0; z-index:1000;
       backdrop-filter: blur(14px);
       background:rgba(7,8,10,0.85);
-      border-bottom:1px solid rigba(255,255,255,.06));
+      border-bottom:1px solid rgba(255,255,255,.06));
     }
     .navin{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 0;}
     .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.14em}
@@ -179,66 +179,7 @@
     }
     .contactBox{padding:18px; display:grid; gap:10px;}
     .hint{font-size:12px; color:var(--muted)}
-<section class="leadform" id="leadform">
-  <div class="wrap">
-    <h2>Запросить расчёт</h2>
-    <p class="leadform-sub">
-      Оставьте контакты и коротко опишите задачу. Мы свяжемся с вами и подготовим расчёт.
-    </p>
 
-    <form action="https://formsubmit.co/sport.merch@inbox.ru" method="POST">
-  <input type="hidden" name="_subject" value="Новая заявка с сайта UNITRUS">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-
-  <div class="field">
-    <label for="name">Имя</label>
-    <input id="name" name="Имя" type="text" placeholder="Ваше имя" required>
-  </div>
-
-  <div class="field">
-    <label for="phone">Телефон</label>
-    <input id="phone" name="Телефон" type="tel" placeholder="+7 (999) 999-99-99" required>
-  </div>
-
-  <div class="field">
-    <label for="email">Email</label>
-    <input id="email" name="Email" type="email" placeholder="you@example.com" required>
-  </div>
-
-  <div class="field">
-    <label for="product">Что интересует</label>
-    <select id="product" name="Интерес">
-      <option>Худи</option>
-      <option>Футболки и поло</option>
-      <option>Кофты на молнии</option>
-      <option>Ветровки</option>
-      <option>Спортивная форма</option>
-      <option>Головные уборы</option>
-      <option>Рюкзаки</option>
-      <option>Сумки</option>
-      <option>Другое</option>
-    </select>
-  </div>
-
-  <div class="field">
-    <label for="message">Комментарий</label>
-    <textarea id="message" name="Комментарий" rows="5" placeholder="Опишите, что нужно"></textarea>
-  </div>
-
-  <button type="submit" class="btn">Отправить заявку</button>
-</form>
-      </div>
-
-      <div class="field">
-        <label for="message">Комментарий</label>
-        <textarea id="message" name="Комментарий" rows="5" placeholder="Опишите, что нужно: тираж, изделие, сроки, нанесение"></textarea>
-      </div>
-
-      <button type="submit" class="btn">Отправить заявку</button>
-    </form>
-  </div>
-</section>
     footer{
       padding:34px 0 44px;
       border-top:1px solid var(--line);
@@ -402,11 +343,12 @@
   line-height:1;
   cursor:pointer;
   }
-  .herogird> div{
-    bachground:rgba(255,255,255,0,03);
-    border:1px solid rgba(255,255,255,0,06);
-    border-radius:18px;
-    radding:28px;
+  .heroGrid > div{
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:18px;
+  padding:28px;
+}
   }.leadform{
   padding: 44px 0 60px;
 }
@@ -583,9 +525,11 @@ box-shadow:0 15px 30px rgba(0,0,0,.35);
         </p>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
-         <a class="btn" href="#leadform">Получить расчёт</a>
-          <a class="btn secondary" href="#products">Смотреть продукт</a>
-        </div>
+  <a class="btn" href="#leadform">Получить расчёт</a>
+  <a class="btn secondary" href="#products">Смотреть продукт</a>
+</div>
+
+<div class="hint">⚡ Ответим и сделаем расчёт за 15 минут</div>
 
         <div class="kpis">
           <div class="chip"><b>Разная</b> плотность</div>
@@ -894,6 +838,7 @@ function closeLightbox(){
 </body>
 
 </html>
+
 
 
 
