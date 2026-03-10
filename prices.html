@@ -6,41 +6,8 @@
   <title>Цены и условия — UNITRUS</title>
   <meta name="description" content="Цены на корпоративную одежду и мерч UNITRUS. Худи, футболки, ветровки, форма и аксессуары под заказ. Производство от 15 дней.">
   <link rel="icon" type="image/png" href="/favicon.png">
-.price-why{
-margin:70px 0;
-}
 
-.why-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-margin-top:20px;
-}
-
-.why-card{
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.08);
-border-radius:16px;
-padding:22px;
-}
-
-.why-card h3{
-margin-top:0;
-margin-bottom:8px;
-}
-
-.why-card p{
-color:#a8b0bb;
-margin:0;
-}
-
-@media (max-width:900px){
-
-.why-grid{
-grid-template-columns:1fr;
-}
-
-}
+  <style>
     :root{
       --bg:#14161c;
       --text:#ffffff;
@@ -162,6 +129,11 @@ grid-template-columns:1fr;
       letter-spacing:-.02em;
     }
 
+    h2{
+      margin:0 0 16px;
+      font-size:28px;
+    }
+
     .sub{
       color:var(--muted);
       margin:0 0 36px;
@@ -220,50 +192,33 @@ grid-template-columns:1fr;
       color:var(--accent);
       margin-bottom:6px;
     }
-<section class="price-why">
 
-<h2>Почему наши цены остаются доступными</h2>
+    .price-why{
+      margin:70px 0;
+    }
 
-<div class="why-grid">
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+      margin-top:20px;
+    }
 
-<div class="why-card">
-<h3>Прямое производство</h3>
-<p>
-Мы размещаем заказы напрямую на фабриках без посредников,
-поэтому стоимость производства ниже, чем у большинства поставщиков.
-</p>
-</div>
+    .why-card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      padding:22px;
+    }
 
-<div class="why-card">
-<h3>Оптимизированная логистика</h3>
-<p>
-Налаженная схема доставки позволяет снижать расходы
-на производство и сохранять стабильную цену для клиентов.
-</p>
-</div>
+    .why-card h3{
+      margin-top:0;
+      margin-bottom:8px;
+    }
 
-<div class="why-card">
-<h3>Работа с тиражами</h3>
-<p>
-Корпоративные заказы позволяют оптимизировать производство,
-что снижает стоимость единицы изделия без потери качества.
-</p>
-</div>
-
-<div class="why-card">
-<h3>Контроль качества</h3>
-<p>
-Мы контролируем материалы, пошив и нанесение,
-поэтому изделия выглядят дороже своей стоимости.
-</p>
-</div>
-
-</div>
-
-</section>
-    h2{
-      margin:0 0 16px;
-      font-size:28px;
+    .why-card p{
+      color:var(--muted);
+      margin:0;
     }
 
     .clients{
@@ -316,6 +271,10 @@ grid-template-columns:1fr;
 
       .stats{
         grid-template-columns:1fr 1fr;
+      }
+
+      .why-grid{
+        grid-template-columns:1fr;
       }
 
       .clients{
@@ -432,6 +391,44 @@ grid-template-columns:1fr;
           доставка по всей стране
         </div>
       </div>
+
+      <section class="price-why">
+        <h2>Почему наши цены остаются доступными</h2>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <h3>Прямое производство</h3>
+            <p>
+              Мы размещаем заказы напрямую на фабриках без посредников,
+              поэтому стоимость производства ниже, чем у большинства поставщиков.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <h3>Оптимизированная логистика</h3>
+            <p>
+              Налаженная схема доставки позволяет снижать расходы
+              на производство и сохранять стабильную цену для клиентов.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <h3>Работа с тиражами</h3>
+            <p>
+              Корпоративные заказы позволяют оптимизировать производство,
+              что снижает стоимость единицы изделия без потери качества.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <h3>Контроль качества</h3>
+            <p>
+              Мы контролируем материалы, пошив и нанесение,
+              поэтому изделия выглядят дороже своей стоимости.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <h2>С кем работаем</h2>
 
