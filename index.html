@@ -1,715 +1,785 @@
 <!doctype html>
 <html lang="ru">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "UNITRUS","ЮНАЙТРУС",
-  "url": "https://unitrus.ru/",
-  "logo": "https://unitrus.ru/favicon.png",
-  "telephone": "+79930917619",
-  "sameAs": [
-    "https://t.me/unitruss"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Казань",
-    "addressCountry": "RU"
-  }
-}
-</script>
 <head>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "UNITRUS (ЮНАЙТРУС)",
+    "url": "https://unitrus.ru/",
+    "logo": "https://unitrus.ru/favicon.png",
+    "telephone": "+79930917619",
+    "sameAs": [
+      "https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Казань",
+      "addressCountry": "RU"
+    }
+  }
+  </script>
  
-<meta property="og:title" content="UNITRUS — корпоративная одежда и мерч">
-<meta property="og:description" content="Корпоративная и спортивная одежда, мерч на заказ: худи, футболки, куртки, головные уборы и рюкзаки. Производство под задачи бренда.">
-<meta property="og:image" content="https://unitrus.ru/assets/hero.jpg">
-<meta property="og:url" content="https://unitrus.ru/">
-<meta property="og:type" content="website">
-  
+  <meta property="og:title" content="UNITRUS — корпоративная одежда и мерч">
+  <meta property="og:description" content="Корпоративная и спортивная одежда, мерч на заказ: худи, футболки, куртки, головные уборы и рюкзаки. Производство под задачи бренда.">
+  <meta property="og:image" content="https://unitrus.ru/assets/hero.jpg">
+  <meta property="og:url" content="https://unitrus.ru/">
+  <meta property="og:type" content="website">
+    
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UNITRUS — корпоративная одежда и мерч</title>
   <meta name="description" content="UNITRUS — корпоративная и спортивная одежда, мерч на заказ: худи, футболки, брендированные комплекты для компаний. Производство под задачу бренда, доставка по России. Казань." />
-<link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="https://unitrus.ru/">
-<meta http-equiv="Content-Language" content="ru">
-<meta name="robots" content="index,follow">
- <style>
-:root{
-  --bg:#14161c;
-  --panel:#0b0d10;
-  --text:#e9eef5;
-  --muted:#a8b0bb;
-  --line:rgba(255,255,255,.10);
-  --accent:#ff6a1a;
-  --max:1180px;
-  --r:18px;
-}
-
-*{
-  box-sizing:border-box;
-}
-
-body{
-  margin:0;
-  font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-  background:
-    radial-gradient(1100px 600px at 20% -10%, rgba(255,106,26,.14), transparent 60%),
-    radial-gradient(900px 600px at 110% 20%, rgba(255,255,255,.06), transparent 60%),
-    var(--bg);
-  color:var(--text);
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-.wrap{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:0 20px;
-}
-
-/* NAV */
-
-.nav{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  backdrop-filter:blur(14px);
-  background:rgba(7,8,10,0.85);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.navin{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-  padding:14px 0;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:800;
-  letter-spacing:.14em;
-}
-
-.dot{
-  width:10px;
-  height:10px;
-  border-radius:99px;
-  background:var(--accent);
-  box-shadow:0 0 24px rgba(255,106,26,.45);
-}
-
-.navlinks{
-  display:flex;
-  gap:14px;
-  color:var(--muted);
-  font-size:14px;
-  flex-wrap:wrap;
-}
-
-.navlinks a{
-  color:var(--muted);
-  transition:.2s ease;
-}
-
-.navlinks a:hover{
-  color:var(--text);
-}
-
-/* BUTTONS */
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:12px 16px;
-  border-radius:999px;
-  border:1px solid rgba(255,106,26,.45);
-  background:linear-gradient(180deg, rgba(255,106,26,.18), rgba(255,106,26,.06));
-  color:var(--text);
-  transition:.18s ease;
-  white-space:nowrap;
-  box-shadow:0 8px 30px rgba(255,106,26,.25);
-}
-
-.btn:hover{
-  transform:translateY(-1px);
-  border-color:rgba(255,106,26,.7);
-}
-
-.btn.secondary{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  color:var(--text);
-}
-
-/* HERO */
-
-header{
-  padding:54px 0 26px;
-}
-
-.heroGrid{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:22px;
-  align-items:stretch;
-}
-
-.card{
-  border:1px solid var(--line);
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-  border-radius:var(--r);
-  overflow:hidden;
-}
-
-.heroText{
-  padding:26px;
-}
-
-h1{
-  margin:0 0 10px;
-  font-size:clamp(32px, 4vw, 52px);
-  line-height:1.05;
-  letter-spacing:-.02em;
-}
-
-.sub{
-  color:var(--muted);
-  font-size:16px;
-  max-width:60ch;
-  margin:0 0 18px;
-}
-
-.kpis{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:14px 0 0;
-}
-
-.chip{
-  display:inline-flex;
-  align-items:center;
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.25);
-  color:var(--muted);
-  font-size:13px;
-  cursor:pointer;
-  transition:.2s ease;
-}
-
-.chip b{
-  color:var(--text);
-  font-weight:800;
-}
-
-.chip:hover{
-  transform:translateY(-1px);
-  border-color:rgba(255,106,26,.45);
-}
-
-.heroVisual{
-  position:relative;
-  min-height:360px;
-  background:
-    linear-gradient(90deg, rgba(7,8,10,.95), rgba(7,8,10,.10)),
-    url("assets/hero.jpg") center/cover no-repeat;
-}
-
-.badge{
-  position:absolute;
-  left:18px;
-  bottom:18px;
-  padding:12px 14px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.45);
-  backdrop-filter:blur(10px);
-  max-width:320px;
-}
-
-.badge .t{
-  font-size:12px;
-  color:var(--muted);
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-
-.badge .v{
-  font-size:18px;
-  margin-top:6px;
-  font-weight:900;
-}
-
-.badge .v span{
-  color:var(--accent);
-}
-
-/* GENERAL SECTIONS */
-
-section{
-  padding:16px 0;
-}
-
-h2{
-  margin:0 0 10px;
-  font-size:24px;
-  letter-spacing:-.01em;
-}
-
-.grid3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-
-.pcard{
-  padding:18px;
-}
-
-.pname{
-  font-weight:900;
-  margin:0 0 6px;
-}
-
-.ptext{
-  margin:0;
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* MATERIALS */
-
-.split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  align-items:stretch;
-}
-
-.fabric{
-  min-height:360px;
-  background:
-    linear-gradient(180deg, rgba(7,8,10,.15), rgba(7,8,10,.90)),
-    url("assets/fabric.jpg") center/cover no-repeat;
-}
-
-.pad{
-  padding:22px;
-}
-
-.list{
-  margin:0;
-  padding:0 0 0 18px;
-  color:var(--muted);
-}
-
-.list li{
-  margin:8px 0;
-}
-
-/* GALLERY */
-
-.gallery{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
-.img{
-  width:100%;
-  height:520px;
-  object-fit:cover;
-  display:block;
-  filter:saturate(1.05) contrast(1.05);
-}
-
-/* CONTACT */
-
-.cta{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:14px;
-  align-items:stretch;
-}
-
-.contactBox{
-  padding:18px;
-  display:grid;
-  gap:10px;
-}
-
-.hint{
-  font-size:12px;
-  color:var(--muted);
-}
-
-/* CATALOG */
-
-.catalog{
-  padding:30px 0 60px;
-}
-
-.catalog-head{
-  margin-bottom:26px;
-}
-
-.catalog-head h2{
-  margin:0 0 10px;
-  font-size:clamp(30px, 4vw, 46px);
-  line-height:1.05;
-}
-
-.catalog-head p{
-  margin:0;
-  max-width:760px;
-  color:var(--muted);
-  font-size:16px;
-  line-height:1.6;
-}
-
-.catalog-grid{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:18px;
-  align-items:start;
-}
-
-.catalog-card{
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-  border:1px solid var(--line);
-  border-radius:20px;
-  overflow:hidden;
-  transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-}
-
-.catalog-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(255,106,26,.45);
-  box-shadow:0 12px 40px rgba(0,0,0,.22);
-}
-
-.catalog-card img{
-  width:100%;
-  height:230px;
-  object-fit:cover;
-  display:block;
-}
-
-.catalog-card__body{
-  padding:16px;
-}
-
-.catalog-card__body h3{
-  margin:0 0 8px;
-  font-size:22px;
-  line-height:1.15;
-}
-
-.catalog-card__body p{
-  margin:0 0 12px;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.55;
-  min-height:66px;
-}
-
-.catalog-card__body span{
-  display:inline-block;
-  font-size:12px;
-  line-height:1.4;
-  color:#ff8a4a;
-  border:1px solid rgba(255,106,26,.24);
-  background:rgba(255,106,26,.08);
-  padding:7px 10px;
-  border-radius:999px;
-  cursor:pointer;
-  transition:.2s ease;
-}
-
-.catalog-card__body span:hover{
-  transform:translateY(-1px);
-  border-color:rgba(255,106,26,.45);
-  background:rgba(255,106,26,.14);
-}
-
-/* LIGHTBOX */
-
-.lightbox{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.88);
-  z-index:9999;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.lightbox.show{
-  display:flex;
-}
-
-.lightbox-img{
-  max-width:95%;
-  max-height:90%;
-  border-radius:14px;
-  box-shadow:0 20px 60px rgba(0,0,0,.45);
-}
-
-.lightbox-close{
-  position:absolute;
-  top:16px;
-  right:22px;
-  font-size:42px;
-  color:#fff;
-  line-height:1;
-  cursor:pointer;
-}
-
-/* FORM */
-
-.leadform{
-  padding:40px 0 60px;
-}
-
-.leadform h2{
-  margin:0 0 10px;
-}
-
-.leadform-sub{
-  margin:0 0 20px;
-  color:var(--muted);
-  max-width:760px;
-}
-
-.quote-form{
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:18px;
-  padding:20px;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-}
-
-.field{
-  display:grid;
-  gap:8px;
-  margin-bottom:16px;
-}
-
-.field label{
-  font-size:14px;
-  color:var(--muted);
-}
-
-.field input,
-.field select,
-.field textarea{
-  width:100%;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.10);
-  color:var(--text);
-  border-radius:12px;
-  padding:14px;
-  font:inherit;
-  outline:none;
-}
-
-.field textarea{
-  resize:vertical;
-  min-height:120px;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-  border-color:rgba(255,106,26,.55);
-  box-shadow:0 0 0 3px rgba(255,106,26,.10);
-}
-
-/* FLOAT BUTTON */
-
-.tg-float{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#ff6a1a;
-  color:white;
-  padding:14px 18px;
-  border-radius:30px;
-  font-weight:600;
-  text-decoration:none;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
-  z-index:999;
-  transition:all .2s;
-}
-
-.tg-float:hover{
-  transform:translateY(-3px);
-  box-shadow:0 15px 30px rgba(0,0,0,.35);
-}
-
-/* SUCCESS MESSAGE */
-
-.success-message{
-  position:fixed;
-  left:20px;
-  bottom:20px;
-  background:#14161c;
-  border:1px solid rgba(255,255,255,.15);
-  padding:16px 20px;
-  border-radius:14px;
-  color:#fff;
-  font-size:15px;
-  box-shadow:0 10px 40px rgba(0,0,0,.4);
-  display:none;
-  z-index:9999;
-  text-align:left;
-  max-width:320px;
-}
-
-/* FOOTER */
-
-footer{
-  padding:34px 0 44px;
-  border-top:1px solid var(--line);
-  color:var(--muted);
-}
-
-/* RESPONSIVE */
-
-@media (max-width:1100px){
-  .catalog-grid{
-    grid-template-columns:repeat(2, 1fr);
-  }
-}
-
-@media (max-width:920px){
-  .heroGrid,
-  .split,
-  .gallery,
-  .cta{
-    grid-template-columns:1fr;
-  }
+  <meta http-equiv="Content-Language" content="ru">
+  <meta name="robots" content="index,follow">
   
-  .heroVisual{
-    min-height:320px;
+  <style>
+  :root{
+    --bg:#f8fafc;
+    --panel:#ffffff;
+    --panel-sub:#f1f5f9;
+    --text:#0f172a;
+    --muted:#64748b;
+    --line:rgba(15,23,42,.08);
+    --accent:#ff6a1a;
+    --max:1180px;
+    --r:20px;
   }
 
-  .nav .btn{
-    padding:8px 14px;
-    font-size:13px;
+  *{
+    box-sizing:border-box;
   }
-  .img{
-    height:460px;
+
+  body{
+    margin:0;
+    font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+    background:
+      radial-gradient(1000px 600px at 10% -10%, rgba(255,106,26,.07), transparent 50%),
+      radial-gradient(800px 600px at 100% 40%, rgba(15,23,42,.02), transparent 50%),
+      var(--bg);
+    color:var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{
+    color:inherit;
+    text-decoration:none;
+  }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* NAV */
+
+  .nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(16px);
+    background:rgba(248, 250, 252, 0.85);
+    border-bottom:1px solid var(--line);
   }
 
   .navin{
-    flex-direction:column;
-    align-items:flex-start;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    padding:16px 0;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:800;
+    letter-spacing:.12em;
+    color:var(--text);
+  }
+
+  .dot{
+    width:10px;
+    height:10px;
+    border-radius:99px;
+    background:var(--accent);
+    box-shadow:0 0 14px rgba(255,106,26,.6);
   }
 
   .navlinks{
     display:flex;
+    gap:20px;
+    color:var(--muted);
+    font-size:14px;
+    font-weight: 500;
     flex-wrap:wrap;
-    gap:10px 14px;
-    width:100%;
-    overflow:visible;
-    white-space:normal;
-    padding:8px 0 2px;
   }
 
   .navlinks a{
-    font-size:13px;
+    color:var(--muted);
+    transition:.2s ease;
   }
 
-  .nav .btn{
-    width:100%;
+  .navlinks a:hover{
+    color:var(--accent);
+  }
+
+  /* BUTTONS */
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 24px;
+    border-radius:999px;
+    border:1px solid var(--accent);
+    background:var(--accent);
+    color:#fff;
+    font-weight:600;
+    transition:.2s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space:nowrap;
+    box-shadow:0 6px 20px rgba(255,106,26,.25);
+    cursor:pointer;
+  }
+
+  .btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(255,106,26,.4);
+    background:#e55a13;
+    border-color:#e55a13;
+  }
+
+  .btn.secondary{
+    border:1px solid var(--line);
+    background:var(--panel);
+    color:var(--text);
+    box-shadow:0 4px 12px rgba(0,0,0,.03);
+  }
+
+  .btn.secondary:hover{
+    background:var(--panel-sub);
+    border-color:rgba(15,23,42,.15);
+    color:var(--text);
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(0,0,0,.06);
+  }
+
+  /* HERO */
+
+  header{
+    padding:60px 0 30px;
+  }
+
+  .heroGrid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:24px;
+    align-items:stretch;
+  }
+
+  .card{
+    border:1px solid var(--line);
+    background:var(--panel);
+    border-radius:var(--r);
+    overflow:hidden;
+    box-shadow:0 4px 24px rgba(15,23,42,.03);
+  }
+
+  .heroText{
+    padding:40px;
+    display:flex;
+    flex-direction:column;
     justify-content:center;
   }
 
-  .grid3{
-    grid-template-columns:1fr;
+  h1{
+    margin:0 0 16px;
+    font-size:clamp(32px, 4vw, 48px);
+    line-height:1.1;
+    letter-spacing:-.03em;
+    color:var(--text);
   }
-}
 
-@media (max-width:720px){
+  .sub{
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.6;
+    max-width:60ch;
+    margin:0 0 24px;
+  }
+
+  .kpis{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:24px 0 0;
+  }
+
+  .chip{
+    display:inline-flex;
+    align-items:center;
+    padding:8px 14px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:var(--panel-sub);
+    color:var(--muted);
+    font-size:13px;
+    cursor:pointer;
+    transition:.2s ease;
+    font-weight:500;
+  }
+
+  .chip b{
+    color:var(--text);
+    font-weight:700;
+    margin-right:3px;
+  }
+
+  .chip:hover{
+    transform:translateY(-1px);
+    border-color:var(--accent);
+    background:var(--panel);
+  }
+
+  .heroVisual{
+    position:relative;
+    min-height:400px;
+    background:
+      linear-gradient(90deg, rgba(248,250,252,.1), transparent),
+      url("assets/hero.jpg") center/cover no-repeat;
+  }
+
+  .badge{
+    position:absolute;
+    left:24px;
+    bottom:24px;
+    padding:16px;
+    border-radius:16px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(12px);
+    max-width:320px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+  }
+
+  .badge .t{
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    font-weight:700;
+  }
+
+  .badge .v{
+    font-size:17px;
+    margin-top:6px;
+    font-weight:800;
+    color:var(--text);
+  }
+
+  .badge .v span{
+    color:var(--accent);
+  }
+
+  /* GENERAL SECTIONS */
+
+  section{
+    padding:24px 0;
+  }
+
+  h2{
+    margin:0 0 12px;
+    font-size:28px;
+    letter-spacing:-.02em;
+    font-weight:800;
+  }
+
+  .grid3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+  }
+
+  .pcard{
+    padding:24px;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  
+  .pcard:hover{
+    border-color:rgba(255,106,26,.3);
+    transform:translateY(-2px);
+  }
+
+  .pname{
+    font-weight:800;
+    font-size:18px;
+    margin:0 0 8px;
+    color:var(--text);
+  }
+
+  .ptext{
+    margin:0;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  /* MATERIALS */
+
+  .split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    align-items:stretch;
+  }
+
+  .fabric{
+    min-height:380px;
+    background:url("assets/fabric.jpg") center/cover no-repeat;
+  }
+
+  .pad{
+    padding:32px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .list{
+    margin:0;
+    padding:0 0 0 20px;
+    color:var(--muted);
+  }
+
+  .list li{
+    margin:12px 0;
+    line-height:1.6;
+  }
+
+  /* GALLERY */
+
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+
+  .img{
+    width:100%;
+    height:540px;
+    object-fit:cover;
+    display:block;
+    transition:transform .3s ease;
+  }
+  
+  .gallery .card{
+    border:none;
+  }
+  
+  .gallery .card:hover .img{
+    transform:scale(1.02);
+  }
+
+  /* CONTACT */
+
+  .cta{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:16px;
+    align-items:stretch;
+  }
+
+  .contactBox{
+    padding:32px;
+    display:grid;
+    gap:14px;
+    align-content:center;
+    background:var(--panel-sub);
+  }
+
+  .hint{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+
+  /* CATALOG */
+
   .catalog{
-    padding:56px 0;
+    padding:40px 0 60px;
+  }
+
+  .catalog-head{
+    margin-bottom:32px;
+  }
+
+  .catalog-head h2{
+    margin:0 0 12px;
+    font-size:clamp(30px, 4vw, 42px);
+  }
+
+  .catalog-head p{
+    margin:0;
+    max-width:760px;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.6;
   }
 
   .catalog-grid{
-    grid-template-columns:1fr;
-    gap:14px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+    align-items:start;
+  }
+
+  .catalog-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+    transition:transform .25s cubic-bezier(0.4, 0, 0.2, 1), border-color .25s ease, box-shadow .25s ease;
+    box-shadow:0 4px 16px rgba(15,23,42,.02);
+  }
+
+  .catalog-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--accent);
+    box-shadow:0 16px 36px rgba(15,23,42,.08);
   }
 
   .catalog-card img{
-    height:220px;
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    display:block;
+    cursor:pointer;
   }
 
   .catalog-card__body{
-    padding:14px;
+    padding:20px;
   }
 
   .catalog-card__body h3{
+    margin:0 0 10px;
     font-size:20px;
+    font-weight:700;
+    line-height:1.2;
+    color:var(--text);
   }
 
   .catalog-card__body p{
-    min-height:auto;
+    margin:0 0 16px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.55;
+    min-height:66px;
   }
 
-  .form-grid{
-    grid-template-columns:1fr;
+  .catalog-card__body span{
+    display:inline-block;
+    font-size:12px;
+    font-weight:600;
+    line-height:1.4;
+    color:var(--accent);
+    border:1px solid rgba(255,106,26,.15);
+    background:rgba(255,106,26,.05);
+    padding:8px 14px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:.2s ease;
+  }
+
+  .catalog-card__body span:hover{
+    border-color:var(--accent);
+    background:var(--accent);
+    color:#fff;
+  }
+
+  /* LIGHTBOX */
+
+  .lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(15,23,42,.95);
+    z-index:9999;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  }
+
+  .lightbox.show{
+    display:flex;
+  }
+
+  .lightbox-img{
+    max-width:95%;
+    max-height:90%;
+    border-radius:14px;
+    box-shadow:0 24px 60px rgba(0,0,0,.5);
+  }
+
+  .lightbox-close{
+    position:absolute;
+    top:16px;
+    right:22px;
+    font-size:42px;
+    color:#fff;
+    line-height:1;
+    cursor:pointer;
+  }
+
+  /* FORM */
+
+  .leadform{
+    padding:40px 0 60px;
+  }
+
+  .leadform h2{
+    margin:0 0 12px;
+  }
+
+  .leadform-sub{
+    margin:0 0 24px;
+    color:var(--muted);
+    max-width:760px;
+    line-height:1.6;
   }
 
   .quote-form{
-    padding:16px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:32px;
+    box-shadow:0 10px 40px rgba(15,23,42,.04);
   }
+
+  .form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+  }
+
+  .field{
+    display:grid;
+    gap:8px;
+    margin-bottom:20px;
+  }
+
+  .field label{
+    font-size:14px;
+    font-weight:600;
+    color:var(--text);
+  }
+
+  .field input,
+  .field select,
+  .field textarea{
+    width:100%;
+    background:var(--panel-sub);
+    border:1px solid rgba(15,23,42,.08);
+    color:var(--text);
+    border-radius:12px;
+    padding:14px 16px;
+    font:inherit;
+    outline:none;
+    transition:all .2s ease;
+  }
+
+  .field textarea{
+    resize:vertical;
+    min-height:120px;
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    border-color:var(--accent);
+    background:var(--panel);
+    box-shadow:0 0 0 4px rgba(255,106,26,.12);
+  }
+
+  /* FLOAT BUTTON */
 
   .tg-float{
-    right:14px;
-    bottom:14px;
-    padding:12px 16px;
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    background:#0066ff;
+    color:white;
+    padding:16px 24px;
+    border-radius:30px;
+    font-weight:700;
+    text-decoration:none;
+    box-shadow:0 10px 25px rgba(0,102,255,.3);
+    z-index:999;
+    transition:all .25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
+
+  .tg-float:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 30px rgba(0,102,255,.45);
+    background:#0052cc;
+  }
+
+  /* SUCCESS MESSAGE */
 
   .success-message{
-    left:14px;
-    right:14px;
-    bottom:80px;
-    max-width:none;
+    position:fixed;
+    left:24px;
+    bottom:24px;
+    background:var(--panel);
+    border:1px solid var(--accent);
+    padding:16px 24px;
+    border-radius:16px;
+    color:var(--text);
+    font-size:15px;
+    font-weight:600;
+    box-shadow:0 16px 40px rgba(15,23,42,.12);
+    display:none;
+    z-index:9999;
+    text-align:left;
+    max-width:340px;
   }
-}
-</style>
-  <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107053501', 'ym');
 
-    ym(107053501, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/107053501" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+  /* FOOTER */
+
+  footer{
+    padding:40px 0;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+    background:var(--panel-sub);
+    font-size:14px;
+  }
+
+  /* RESPONSIVE */
+
+  @media (max-width:1100px){
+    .catalog-grid{
+      grid-template-columns:repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width:920px){
+    .heroGrid,
+    .split,
+    .gallery,
+    .cta{
+      grid-template-columns:1fr;
+    }
+    
+    .heroVisual{
+      min-height:340px;
+    }
+
+    .heroText {
+      padding: 24px;
+    }
+
+    .nav .btn{
+      padding:10px 20px;
+      font-size:14px;
+    }
+    .img{
+      height:440px;
+    }
+
+    .navin{
+      flex-direction:column;
+      align-items:flex-start;
+      padding:12px 0;
+    }
+
+    .navlinks{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 16px;
+      width:100%;
+      padding:12px 0 4px;
+    }
+
+    .nav .btn{
+      width:100%;
+      justify-content:center;
+    }
+
+    .grid3{
+      grid-template-columns:1fr;
+    }
+    
+    .pad {
+      padding: 24px;
+    }
+    
+    .contactBox {
+      padding: 24px;
+    }
+  }
+
+  @media (max-width:720px){
+    .catalog{
+      padding:40px 0;
+    }
+
+    .catalog-grid{
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+
+    .catalog-card img{
+      height:220px;
+    }
+
+    .catalog-card__body{
+      padding:16px;
+    }
+
+    .form-grid{
+      grid-template-columns:1fr;
+    }
+
+    .quote-form{
+      padding:20px;
+    }
+
+    .tg-float{
+      right:16px;
+      bottom:16px;
+      padding:14px 20px;
+    }
+
+    .success-message{
+      left:16px;
+      right:16px;
+      bottom:90px;
+      max-width:none;
+    }
+  }
+  </style>
+  
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107053501', 'ym');
+
+      ym(107053501, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/107053501" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -727,47 +797,45 @@ footer{
         <a href="#process">Процесс</a>
         <a href="#contact">Контакты</a>
       </div>
-      <a class="btn" href="https://t.me/unitruss" target="_blank" rel="noreferrer">Запросить расчёт</a>
+      <a class="btn" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer">Написать в МАКС</a>
     </div>
   </div>
 
- <header>
-  <div class="wrap heroGrid">
+  <header>
+    <div class="wrap heroGrid">
+      <div class="card heroText">
+        <h1>UNITRUS, ЮНАЙТ РУС — корпоративная одежда и мерч под ключ</h1>
 
-    <div class="card heroText">
-      <h1>UNITRUS, ЮНАЙТ РУС — корпоративная одежда<br>и мерч под ключ</h1>
+        <p class="sub">
+          Казань • работаем по России • самая доступная цена • контроль качества.<br>
+          • Худи, футболки, куртки, бейсболки и весь мерч под желание клиента.<br>
+          • Дизайн в подарок при заказе от 50 шт.
+        </p>
 
-      <p class="sub">
-        Казань • работаем по России • самая доступная цена • контроль качества.
-        • Худи, футболки, куртки, бейсболки и весь мерч под желание клиента.
-        • Дизайн в подарок при заказе от 50 шт.
-      </p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn" href="#leadform">Получить расчёт</a>
+          <a class="btn secondary" href="#products">Смотреть продукт</a>
+        </div>
 
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="btn" href="#leadform">Получить расчёт</a>
-        <a class="btn secondary" href="#products">Смотреть продукт</a>
+        <div class="hint" style="margin-top: 12px;">⚡ Ответим и сделаем расчёт за 15 минут в МАКС</div>
+
+        <div class="kpis">
+          <a href="#catalog" class="chip"><b>Разная</b> плотность</a>
+          <a href="#catalog" class="chip"><b>Худи</b> / футболки</a>
+          <a href="#catalog" class="chip"><b>Мерч</b> для команд</a>
+          <div class="chip"><b>Казань</b> • Россия</div>
+        </div>
       </div>
 
-      <div class="hint">⚡ Ответим и сделаем расчёт за 15 минут</div>
-
-      <div class="kpis">
-        <a href="#catalog" class="chip"><b>Разная</b> плотность</a>
-        <a href="#catalog" class="chip"><b>Худи</b> / футболки</a>
-        <a href="#catalog" class="chip"><b>Мерч</b> для команд</a>
-        <div class="chip"><b>Казань</b> • Россия</div>
+      <div class="card heroVisual" aria-label="UNITRUS hero">
+        <div class="badge">
+          <div class="t">ключевой параметр</div>
+          <div class="v">Плотность <span>разная</span> под любой бюджет</div>
+        </div>
       </div>
     </div>
-
-    <div class="card heroVisual" aria-label="UNITRUS hero">
-      <div class="badge">
-        <div class="t">ключевой параметр</div>
-        <div class="v">Плотность <span>разная</span> под любой бюджет</div>
-      </div>
-    </div>
-
-  </div>
-</header>
-  
+  </header>
+    
   <main>
     <section id="products">
       <div class="wrap">
@@ -779,15 +847,15 @@ footer{
         <div class="grid3">
           <div class="card pcard">
             <p class="pname">Худи / свитшоты</p>
-            <p class="ptext">Плотные полотна 320–450 g/m², держат форму, выглядят дорого.</p>
+            <p class="ptext">Плотные полотна 320–450 g/m², отлично держат форму, выглядят премиально и дорого.</p>
           </div>
           <div class="card pcard">
             <p class="pname">Футболки / лонгсливы</p>
-            <p class="ptext">Комфортная посадка, варианты ткани под сезон и задачу.</p>
+            <p class="ptext">Комфортная анатомическая посадка, премиум варианты ткани под любой сезон и задачу.</p>
           </div>
           <div class="card pcard">
             <p class="pname">Весь мерч</p>
-            <p class="ptext">Комплекты для мероприятий, команд и корпоративных подарков.</p>
+            <p class="ptext">Стильные комплекты для масштабных мероприятий, топ-команд и корпоративных подарков.</p>
           </div>
         </div>
       </div>
@@ -802,7 +870,7 @@ footer{
             <li>Все логотипы, дизайны — под желание клиента корпоративный tech.</li>
             <li>Фактура ткани как главный аргумент: видно качество без лишних слов.</li>
             <li>Акцентный цвет для деталей и CTA.</li>
-            <li>Нанесение: печать / вышивка / шевроны — под задачу.</li>
+            <li>Нанесение: печать / вышивка / шевроны — под вашу задачу.</li>
           </ul>
         </div>
       </div>
@@ -846,7 +914,7 @@ footer{
         <div class="card pad">
           <h2>Связаться</h2>
           <p class="sub" style="margin-top:0">
-            Напиши в Telegram или позвони — уточним тираж, сроки и предложим варианты по материалам и нанесению.
+            Напиши в МАКС или позвони — уточним тираж, сроки и предложим варианты по материалам и нанесению.
           </p>
 
           <div class="kpis">
@@ -857,240 +925,241 @@ footer{
         </div>
 
         <div class="card contactBox">
-          <a class="btn" href="https://t.me/unitruss" target="_blank" rel="noreferrer">Написать в Telegram</a>
+          <a class="btn" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer">Написать в МАКС</a>
           <a class="btn secondary" href="tel:+79930917619">Позвонить: +7 993 091 7619</a>
           <div class="hint">Чем точнее напишешь “тираж + сроки + что нужно”, тем быстрее дадим расчёт.</div>
         </div>
       </div>
     </section>
   </main>
-<section>
-  <div class="wrap">
- 
-  <section style="padding:60px 20px; max-width:1100px; margin:0 auto;">
-  <h2 style="font-size:28px; margin-bottom:20px;">
 
-    Корпоративная одежда и мерч на заказ в Казани
-  </h2>
-  <p>
-    UNITRUS — производство корпоративной одежды и мерча под ключ для бизнеса в Казани и по всей России.
-    Мы создаём брендированную одежду для компаний: худи, футболки, свитшоты, поло,
-    спортивные костюмы и аксессуары с логотипом.
-  </p>
+  <section style="background: var(--panel-sub);">
+    <div class="wrap">
+      <div style="padding:40px 0; max-width:1100px; margin:0 auto;">
+        <h2 style="font-size:24px; margin-bottom:16px;">
+          Corporate одежда и мерч на заказ в Казани
+        </h2>
+        <p style="color: var(--muted); line-height: 1.6; margin-bottom: 12px;">
+          UNITRUS — производство корпоративной одежды и мерча под ключ для бизнеса в Казани и по всей России.
+          Мы создаём брендированную одежду для компаний: худи, футболки, свитшоты, поло,
+          спортивные костюмы и аксессуары с логотипом.
+        </p>
+        <p style="color: var(--muted); line-height: 1.6; margin-bottom: 12px;">
+          Наша задача — не просто пошить одежду, а разработать инструмент имиджа и узнаваемости.
+          Мы помогаем бизнесу усилить бренд через качественный мерч:
+          подбираем ткани, контролируем пошив, прорабатываем нанесение логотипа и фирменных элементов.
+        </p>
+        <p style="color: var(--muted); line-height: 1.6; margin-bottom: 12px;">
+          UNITRUS изготавливает мерч на заказ тиражами от малых партий до крупных объёмов.
+          Доступны различные методы брендирования: вышивка, шелкография,
+          DTF-печать, термотрансфер и другие технологии нанесения.
+        </p>
+        <p style="color: var(--muted); line-height: 1.6; margin: 0;">
+          Если вам нужна корпоративная одежда или производство мерча под ключ —
+          UNITRUS обеспечит системный подход, контроль качества и доставку по России.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <p>
-    Наша задача — не просто пошить одежду, а разработать инструмент имиджа и узнаваемости.
-    Мы помогаем бизнесу усилить бренд через качественный мерч:
-    подбираем ткани, контролируем пошив, прорабатываем нанесение логотипа и фирменных элементов.
-  </p>
-
-  <p>
-    UNITRUS изготавливает мерч на заказ тиражами от малых партий до крупных объёмов.
-    Доступны различные методы брендирования: вышивка, шелкография,
-    DTF-печать, термотрансфер и другие технологии нанесения.
-  </p>
-
-  <p>
-    Если вам нужна корпоративная одежда или производство мерча под ключ —
-    UNITRUS обеспечит системный подход, контроль качества и доставку по России.
-  </p>
-</section>
-</section>
   <section class="catalog" id="catalog">
-  <div class="wrap">
-    <div class="catalog-head">
-      <h2>Каталог продукции</h2>
-      <p>Производим корпоративную одежду и мерч для брендов, команд и компаний. Подбираем модель, материал и нанесение под задачу.</p>
+    <div class="wrap">
+      <div class="catalog-head">
+        <h2>Каталог продукции</h2>
+        <p>Производим корпоративную одежду и мерч для брендов, команд и компаний. Подбираем модель, материал и нанесение под задачу.</p>
+      </div>
+
+      <div class="catalog-grid">
+        <article class="catalog-card">
+          <img src="assets/catalog-tshirts.jpg" alt="Футболки и поло UNITRUS" onclick="openLightbox(this.src)">
+          <div class="catalog-card__body">
+            <h3>Футболки и поло</h3>
+            <p>Базовые модели для корпоративного мерча, мероприятий, команд и брендов.</p>
+            <span onclick="openLightbox('assets/catalog-tshirts.jpg')">
+              Футболки • Поло • Разные ткани
+            </span>
+          </div>
+        </article>
+
+        <article class="catalog-card">
+          <img src="assets/catalog-hoodie.jpg" alt="Худи UNITRUS" onclick="openLightbox(this.src)">
+          <div class="catalog-card__body">
+            <h3>Худи</h3>
+            <p>Базовые и премиальные худи для корпоративного мерча, команд и повседневной формы.</p>
+            <span onclick="openLightbox('assets/catalog-hoodie.jpg')">
+              Печать • Вышивка • Нашивки
+            </span>
+          </div>
+        </article>
+
+        <article class="catalog-card">
+          <img src="assets/catalog-zip.jpg" alt="Кофты на молнии UNITRUS" onclick="openLightbox(this.src)">
+          <div class="catalog-card__body">
+            <h3>Кофты на молнии</h3>
+            <p>Универсальная модель для брендов и команд с аккуратной посадкой и плотной тканью.</p>
+            <span onclick="openLightbox('assets/catalog-zip.jpg')">
+              Повседневная носка • Команды
+            </span>
+          </div>
+        </article>
+
+        <article class="catalog-card">
+          <img src="assets/catalog-windbreaker.jpg" alt="Ветровки UNITRUS" onclick="openLightbox(this.src)">
+          <div class="catalog-card__body">
+            <h3>Ветровки</h3>
+            <p>Лёгкие брендированные ветровки для мероприятий, персонала и командных комплектов.</p>
+            <span onclick="openLightbox('assets/catalog-windbreaker.jpg')">
+              Печать • Вышивка • Разные цвета
+            </span>
+          </div>
+        </article>
+
+        <article class="catalog-card">
+          <img src="assets/catalog-sport.jpg" alt="Спортивная форма UNITRUS" onclick="openLightbox(this.src)">
+          <div class="catalog-card__body">
+            <h3>Спортивная форма</h3>
+            <p>Форма для клубов, турниров, школьных и корпоративных команд с персонализацией.</p>
+            <span onclick="openLightbox('assets/catalog-sport.jpg')">
+              Имя • Номер • Логотип
+            </span>
+          </div>
+        </article>
+
+        <article class="catalog-card">
+          <img src="assets/catalog-headwear.jpg" alt="Головные уборы UNITRUS" onclick="openLightbox(this.src)">
+          <div class="catalog-card__body">
+            <h3>Головные уборы</h3>
+            <p>Бейсболки, trucker, панамы и другие варианты брендированных головных уборов.</p>
+            <span onclick="openLightbox('assets/catalog-headwear.jpg')">
+              Вышивка • Печать • Модели
+            </span>
+          </div>
+        </article>
+
+        <article class="catalog-card">
+          <img src="assets/catalog-backpack.jpg" alt="Рюкзаки UNITRUS" onclick="openLightbox(this.src)">
+          <div class="catalog-card__body">
+            <h3>Рюкзаки</h3>
+            <p>Функциональные рюкзаки для сотрудников, спорта, команд и брендированных наборов.</p>
+            <span onclick="openLightbox('assets/catalog-backpack.jpg')">
+              Городские • Спортивные
+            </span>
+          </div>
+        </article>
+
+        <article class="catalog-card">
+          <img src="assets/catalog-bag.jpg" alt="Сумки UNITRUS" onclick="openLightbox(this.src)">
+          <div class="catalog-card__body">
+            <h3>Сумки</h3>
+            <p>Спортивные и дорожные сумки для команд, корпоративных подарков и бренд-комплектов.</p>
+            <span onclick="openLightbox('assets/catalog-bag.jpg')">
+              Спорт • Поездки • Наборы
+            </span>
+          </div>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="catalog-grid">
-
-      <article class="catalog-card">
-        <img src="assets/catalog-tshirts.jpg" alt="Футболки и поло UNITRUS" onclick="openLightbox(this.src)">
-        <div class="catalog-card__body">
-          <h3>Футболки и поло</h3>
-          <p>Базовые модели для корпоративного мерча, мероприятий, команд и брендов.</p>
-          <span onclick="openLightbox('assets/catalog-tshirts.jpg')" style="cursor:pointer;">
-            Футболки • Поло • Разные ткани
-          </span>
-        </div>
-      </article>
-
-      <article class="catalog-card">
-        <img src="assets/catalog-hoodie.jpg" alt="Худи UNITRUS" onclick="openLightbox(this.src)">
-        <div class="catalog-card__body">
-          <h3>Худи</h3>
-          <p>Базовые и премиальные худи для корпоративного мерча, команд и повседневной формы.</p>
-          <span onclick="openLightbox('assets/catalog-hoodie.jpg')" style="cursor:pointer;">
-            Печать • Вышивка • Нашивки
-          </span>
-        </div>
-      </article>
-
-      <article class="catalog-card">
-        <img src="assets/catalog-zip.jpg" alt="Кофты на молнии UNITRUS" onclick="openLightbox(this.src)">
-        <div class="catalog-card__body">
-          <h3>Кофты на молнии</h3>
-          <p>Универсальная модель для брендов и команд с аккуратной посадкой и плотной тканью.</p>
-          <span onclick="openLightbox('assets/catalog-zip.jpg')" style="cursor:pointer;">
-            Повседневная носка • Команды • Мероприятия
-          </span>
-        </div>
-      </article>
-
-      <article class="catalog-card">
-        <img src="assets/catalog-windbreaker.jpg" alt="Ветровки UNITRUS" onclick="openLightbox(this.src)">
-        <div class="catalog-card__body">
-          <h3>Ветровки</h3>
-          <p>Лёгкие брендированные ветровки для мероприятий, персонала и командных комплектов.</p>
-          <span onclick="openLightbox('assets/catalog-windbreaker.jpg')" style="cursor:pointer;">
-            Печать • Вышивка • Несколько цветов
-          </span>
-        </div>
-      </article>
-
-      <article class="catalog-card">
-        <img src="assets/catalog-sport.jpg" alt="Спортивная форма UNITRUS" onclick="openLightbox(this.src)">
-        <div class="catalog-card__body">
-          <h3>Спортивная форма</h3>
-          <p>Форма для клубов, турниров, школьных и корпоративных команд с персонализацией.</p>
-          <span onclick="openLightbox('assets/catalog-sport.jpg')" style="cursor:pointer;">
-            Имя • Номер • Логотип команды
-          </span>
-        </div>
-      </article>
-
-      <article class="catalog-card">
-        <img src="assets/catalog-headwear.jpg" alt="Головные уборы UNITRUS" onclick="openLightbox(this.src)">
-        <div class="catalog-card__body">
-          <h3>Головные уборы</h3>
-          <p>Бейсболки, trucker, панамы и другие варианты брендированных головных уборов.</p>
-          <span onclick="openLightbox('assets/catalog-headwear.jpg')" style="cursor:pointer;">
-            Вышивка • Печать • Разные модели
-          </span>
-        </div>
-      </article>
-
-      <article class="catalog-card">
-        <img src="assets/catalog-backpack.jpg" alt="Рюкзаки UNITRUS" onclick="openLightbox(this.src)">
-        <div class="catalog-card__body">
-          <h3>Рюкзаки</h3>
-          <p>Функциональные рюкзаки для сотрудников, спорта, команд и брендированных наборов.</p>
-          <span onclick="openLightbox('assets/catalog-backpack.jpg')" style="cursor:pointer;">
-            Городские • Спортивные • С логотипом
-          </span>
-        </div>
-      </article>
-
-      <article class="catalog-card">
-        <img src="assets/catalog-bag.jpg" alt="Сумки UNITRUS" onclick="openLightbox(this.src)">
-        <div class="catalog-card__body">
-          <h3>Сумки</h3>
-          <p>Спортивные и дорожные сумки для команд, корпоративных подарков и бренд-комплектов.</p>
-          <span onclick="openLightbox('assets/catalog-bag.jpg')" style="cursor:pointer;">
-            Спорт • Поездки • Мерч-наборы
-          </span>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
   <section class="leadform" id="leadform">
-  <div class="wrap">
-    <h2>Запросить расчёт</h2>
-    <p class="leadform-sub">
-      Оставьте контакты и коротко опишите задачу. Мы свяжемся с вами и подготовим расчёт.
-    </p>
+    <div class="wrap">
+      <h2>Запросить расчёт</h2>
+      <p class="leadform-sub">
+        Оставьте контакты и коротко опишите задачу. Мы свяжемся с вами и подготовим индивидуальный расчёт стоимости.
+      </p>
 
-    <form action="https://formsubmit.co/sport.merch@inbox.ru" method="POST" class="quote-form">
-      <input type="hidden" name="_subject" value="Новая заявка с сайта UNITRUS">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://unitrus.ru/?sent=1">
+      <form action="https://formsubmit.co/sport.merch@inbox.ru" method="POST" class="quote-form">
+        <input type="hidden" name="_subject" value="Новая заявка с сайта UNITRUS">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://unitrus.ru/?sent=1">
 
-      <div class="form-grid">
-        <div class="field">
-          <label for="name">Имя</label>
-          <input id="name" name="Имя" type="text" placeholder="Ваше имя" required>
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Имя</label>
+            <input id="name" name="Имя" type="text" placeholder="Ваше имя" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Телефон</label>
+            <input id="phone" name="Телефон" type="tel" placeholder="+7 (999) 999-99-99" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="field">
+            <label for="product">Что интересует</label>
+            <select id="product" name="Интерес">
+              <option value="Худи">Худи</option>
+              <option value="Футболки и поло">Футболки и поло</option>
+              <option value="Кофты на молнии">Кофты на молнии</option>
+              <option value="Ветровки">Ветровки</option>
+              <option value="Спортивная форма">Спортивная форма</option>
+              <option value="Головные уборы">Головные уборы</option>
+              <option value="Рюкзаки">Рюкзаки</option>
+              <option value="Сумки">Сумки</option>
+              <option value="Другое">Другое</option>
+            </select>
+          </div>
         </div>
 
         <div class="field">
-          <label for="phone">Телефон</label>
-          <input id="phone" name="Телефон" type="tel" placeholder="+7 (999) 999-99-99" required>
+          <label for="message">Комментарий к заказу</label>
+          <textarea id="message" name="Комментарий" rows="5" placeholder="Опишите тираж, пожелания по материалу, нанесению или срокам..."></textarea>
         </div>
 
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="Email" type="email" placeholder="you@example.com" required>
-        </div>
+        <button type="submit" class="btn">Отправить заявку</button>
+      </form>
+    </div>
+  </section>
 
-        <div class="field">
-          <label for="product">Что интересует</label>
-          <select id="product" name="Интерес">
-            <option>Худи</option>
-            <option>Футболки и поло</option>
-            <option>Кофты на молнии</option>
-            <option>Ветровки</option>
-            <option>Спортивная форма</option>
-            <option>Головные уборы</option>
-            <option>Рюкзаки</option>
-            <option>Сумки</option>
-            <option>Другое</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="message">Комментарий</label>
-        <textarea id="message" name="Комментарий" rows="5" placeholder="Опишите, что нужно"></textarea>
-      </div>
-
-      <button type="submit" class="btn">Отправить заявку</button>
-    </form>
-  </div>
-</section>
   <footer>
     <div class="wrap" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
       <div>© UNITRUS</div>
-      <div style="opacity:.9">Корпоративная одежда и мерч • Казань • Россия</div>
+      <div>Corporate clothing and merch • Казань • Россия</div>
     </div>
   </footer>
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <span class="lightbox-close">&times;</span>
-  <img id="lightbox-img" class="lightbox-img" src="">
-</div>
 
-<script>
-function openLightbox(src){
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox').classList.add('show');
-}
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-img" src="">
+  </div>
 
-function closeLightbox(){
-  document.getElementById('lightbox').classList.remove('show');
-}
-</script>
-  <a href="https://t.me/unitruss" class="tg-float" target="_blank">
-💬 Написать
-</a>
-  <div id="success-message" class="success-message">
-✅ Заявка отправлена<br>
-Мы свяжемся с вами в течение 15 минут
-</div>
   <script>
-if(window.location.search.includes("sent=1")){
-document.getElementById("success-message").style.display="block";
+  function openLightbox(src){
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('show');
+  }
 
-setTimeout(function(){
-document.getElementById("success-message").style.display="none";
-},5000);
-}
-</script>
+  function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('show');
+  }
+  </script>
+
+  <!-- Кнопка МАКС -->
+  <a href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" class="tg-float" target="_blank" rel="noreferrer">
+    💬 Написать в МАКС
+  </a>
+
+  <div id="success-message" class="success-message">
+    ✅ Заявка успешно отправлена!<br>
+    Мы свяжемся с вами в течение 15 минут.
+  </div>
+
+  <script>
+  if(window.location.search.includes("sent=1")){
+    document.getElementById("success-message").style.display="block";
+
+    setTimeout(function(){
+      document.getElementById("success-message").style.display="none";
+    },5000);
+  }
+  </script>
 </body>
-
 </html>
-
 
 
 
