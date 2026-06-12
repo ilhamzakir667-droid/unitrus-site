@@ -100,6 +100,7 @@
     font-weight:800;
     letter-spacing:.12em;
     color:var(--text);
+    flex-shrink: 0;
   }
 
   .dot{
@@ -122,6 +123,7 @@
   .navlinks a{
     color:var(--muted);
     transition:.2s ease;
+    white-space: nowrap;
   }
 
   .navlinks a:hover{
@@ -172,7 +174,7 @@
   /* HERO */
 
   header{
-    padding:60px 0 30px;
+    padding:40px 0 30px;
   }
 
   .heroGrid{
@@ -686,31 +688,46 @@
       padding: 24px;
     }
 
-    .nav .btn{
-      padding:10px 20px;
-      font-size:14px;
-    }
     .img{
       height:440px;
     }
 
     .navin{
-      flex-direction:column;
-      align-items:flex-start;
-      padding:12px 0;
+      padding: 12px 0;
+      gap: 10px;
     }
 
+    /* Превращаем ссылки в красивую горизонтальную ленту скролла */
     .navlinks{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px 16px;
-      width:100%;
-      padding:12px 0 4px;
+      width: calc(100% + 40px);
+      margin: 4px -20px -4px -20px;
+      padding: 8px 20px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      gap: 18px;
+    }
+    
+    /* Прячем дефолтный некрасивый скроллбар */
+    .navlinks::-webkit-scrollbar {
+      display: none;
     }
 
+    /* Мобильная кнопка МАКС в шапке становится компактной иконкой */
     .nav .btn{
-      width:100%;
-      justify-content:center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border-radius: 50%;
+      font-size: 16px;
+    }
+    
+    .nav .btn span {
+      display: none; /* Прячем длинный текст */
+    }
+    
+    .nav .btn::before {
+      content: '💬'; /* Оставляем только понятную иконку чата */
     }
 
     .grid3{
@@ -797,7 +814,7 @@
         <a href="#process">Процесс</a>
         <a href="#contact">Контакты</a>
       </div>
-      <a class="btn" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer">Написать в МАКС</a>
+      <a class="btn" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer"><span>Написать в МАКС</span></a>
     </div>
   </div>
 
@@ -1018,7 +1035,7 @@
           <img src="assets/catalog-sport.jpg" alt="Спортивная форма UNITRUS" onclick="openLightbox(this.src)">
           <div class="catalog-card__body">
             <h3>Спортивная форма</h3>
-            <p>Форма для клубов, турниров, школьных и корпоративных команд с персонализацией.</p>
+            <p>Форма для клубов, турниров, школьных и корпоративных команд с大力 персонализацией.</p>
             <span onclick="openLightbox('assets/catalog-sport.jpg')">
               Имя • Номер • Логотип
             </span>
@@ -1160,8 +1177,6 @@
   </script>
 </body>
 </html>
-
-
 
 
 
