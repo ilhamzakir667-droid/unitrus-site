@@ -75,7 +75,6 @@
   }
 
   /* NAV */
-
   .nav{
     position:sticky;
     top:0;
@@ -89,7 +88,6 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:14px;
     padding:16px 0;
   }
 
@@ -101,6 +99,7 @@
     letter-spacing:.12em;
     color:var(--text);
     flex-shrink: 0;
+    z-index: 1001;
   }
 
   .dot{
@@ -113,11 +112,10 @@
 
   .navlinks{
     display:flex;
-    gap:20px;
+    gap:24px;
     color:var(--muted);
     font-size:14px;
     font-weight: 500;
-    flex-wrap:wrap;
   }
 
   .navlinks a{
@@ -130,8 +128,28 @@
     color:var(--accent);
   }
 
-  /* BUTTONS */
+  /* Мобильный бургер-переключатель */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
 
+  .menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text);
+    transition: all 0.3s ease;
+  }
+
+  /* BUTTONS */
   .btn{
     display:inline-flex;
     align-items:center;
@@ -172,7 +190,6 @@
   }
 
   /* HERO */
-
   header{
     padding:40px 0 30px;
   }
@@ -289,7 +306,6 @@
   }
 
   /* GENERAL SECTIONS */
-
   section{
     padding:24px 0;
   }
@@ -332,7 +348,6 @@
   }
 
   /* MATERIALS */
-
   .split{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -364,7 +379,6 @@
   }
 
   /* GALLERY */
-
   .gallery{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -388,7 +402,6 @@
   }
 
   /* CONTACT */
-
   .cta{
     display:grid;
     grid-template-columns:1.1fr .9fr;
@@ -411,7 +424,6 @@
   }
 
   /* CATALOG */
-
   .catalog{
     padding:40px 0 60px;
   }
@@ -504,7 +516,6 @@
   }
 
   /* LIGHTBOX */
-
   .lightbox{
     display:none;
     position:fixed;
@@ -538,7 +549,6 @@
   }
 
   /* FORM */
-
   .leadform{
     padding:40px 0 60px;
   }
@@ -608,7 +618,6 @@
   }
 
   /* FLOAT BUTTON */
-
   .tg-float{
     position:fixed;
     right:24px;
@@ -635,7 +644,6 @@
   }
 
   /* SUCCESS MESSAGE */
-
   .success-message{
     position:fixed;
     left:24px;
@@ -655,7 +663,6 @@
   }
 
   /* FOOTER */
-
   footer{
     padding:40px 0;
     border-top:1px solid var(--line);
@@ -664,8 +671,7 @@
     font-size:14px;
   }
 
-  /* RESPONSIVE */
-
+  /* RESPONSIVE & MOBILE MENU */
   @media (max-width:1100px){
     .catalog-grid{
       grid-template-columns:repeat(2, 1fr);
@@ -693,41 +699,57 @@
     }
 
     .navin{
-      padding: 12px 0;
-      gap: 10px;
+      padding: 16px 0;
     }
 
-    /* Превращаем ссылки в красивую горизонтальную ленту скролла */
-    .navlinks{
-      width: calc(100% + 40px);
-      margin: 4px -20px -4px -20px;
-      padding: 8px 20px;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      gap: 18px;
+    /* Показываем кнопку бургера */
+    .menu-toggle {
+      display: flex;
     }
-    
-    /* Прячем дефолтный некрасивый скроллбар */
-    .navlinks::-webkit-scrollbar {
+
+    /* Скрываем десктопные ссылки и убираем кнопку МАКС из шапки */
+    .nav .btn {
       display: none;
     }
 
-    /* Мобильная кнопка МАКС в шапке становится компактной иконкой */
-    .nav .btn{
-      width: 40px;
-      height: 40px;
-      padding: 0;
-      border-radius: 50%;
-      font-size: 16px;
+    /* Современное выпадающее оверлей-меню */
+    .navlinks {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: var(--panel);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      font-size: 22px;
+      font-weight: 700;
+      z-index: 1000;
+      transform: translateY(-100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 40px;
     }
-    
-    .nav .btn span {
-      display: none; /* Прячем длинный текст */
+
+    .navlinks a {
+      color: var(--text);
     }
-    
-    .nav .btn::before {
-      content: '💬'; /* Оставляем только понятную иконку чата */
+
+    /* Состояние открытого меню */
+    .nav.nav-open .navlinks {
+      transform: translateY(0);
+    }
+
+    /* Анимация иконки бургера в крестик */
+    .nav.nav-open .menu-toggle span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .nav.nav-open .menu-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav.nav-open .menu-toggle span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
     }
 
     .grid3{
@@ -800,21 +822,28 @@
 </head>
 
 <body>
-  <div class="nav">
+  <div class="nav" id="navbar">
     <div class="wrap navin">
       <a href="/" class="brand">
         <span class="dot"></span> UNITRUS ЮНАЙТ РУС
       </a>
       
-      <div class="navlinks">
-        <a href="#catalog">Каталог продукции</a>
-        <a href="/prices.html">Цены</a>
-        <a href="#products">Продукт</a>
-        <a href="#materials">Материалы</a>
-        <a href="#process">Процесс</a>
-        <a href="#contact">Контакты</a>
+      <!-- Бургер кнопка -->
+      <button class="menu-toggle" id="menuBtn" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="navlinks" id="navLinks">
+        <a href="#catalog" onclick="toggleMenu()">Каталог продукции</a>
+        <a href="/prices.html" onclick="toggleMenu()">Цены</a>
+        <a href="#products" onclick="toggleMenu()">Продукт</a>
+        <a href="#materials" onclick="toggleMenu()">Материалы</a>
+        <a href="#process" onclick="toggleMenu()">Процесс</a>
+        <a href="#contact" onclick="toggleMenu()">Контакты</a>
       </div>
-      <a class="btn" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer"><span>Написать в МАКС</span></a>
+      <a class="btn" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer">Написать в МАКС</a>
     </div>
   </div>
 
@@ -983,7 +1012,7 @@
     <div class="wrap">
       <div class="catalog-head">
         <h2>Каталог продукции</h2>
-        <p>Производим корпоративную одежду и мерч для брендов, команд и компаний. Подбираем модель, материал и нанесение под задачу.</p>
+        <p>Производим корпоративную одежду и мерч для брендов, команд и компаний. Подбираем модель, material и нанесение под задачу.</p>
       </div>
 
       <div class="catalog-grid">
@@ -1154,6 +1183,20 @@
   function closeLightbox(){
     document.getElementById('lightbox').classList.remove('show');
   }
+
+  // Скрипт для открытия/закрытия мобильного меню
+  const menuBtn = document.getElementById('menuBtn');
+  const navbar = document.getElementById('navbar');
+
+  menuBtn.addEventListener('click', () => {
+    navbar.classList.toggle('nav-open');
+  });
+
+  function toggleMenu() {
+    if(navbar.classList.contains('nav-open')) {
+      navbar.classList.remove('nav-open');
+    }
+  }
   </script>
 
   <!-- Кнопка МАКС -->
@@ -1177,8 +1220,6 @@
   </script>
 </body>
 </html>
-
-
 
 
 
