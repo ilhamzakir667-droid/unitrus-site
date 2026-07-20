@@ -10,7 +10,8 @@
     "logo": "https://unitrus.ru/favicon.png",
     "telephone": "+79930917619",
     "sameAs": [
-      "https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E"
+      "https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E",
+      "https://t.me/unitrus_merch"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -116,6 +117,7 @@
     color:var(--muted);
     font-size:14px;
     font-weight: 500;
+    align-items: center;
   }
 
   .navlinks a{
@@ -149,7 +151,7 @@
     transition: all 0.3s ease;
   }
 
-  /* BUTTONS */
+  /* BUTTONS & DROPDOWN */
   .btn{
     display:inline-flex;
     align-items:center;
@@ -187,6 +189,81 @@
     color:var(--text);
     transform:translateY(-2px);
     box-shadow:0 6px 16px rgba(0,0,0,.06);
+  }
+
+  /* Компонент Выпадающего меню контактов */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(15,23,42,0.12);
+    padding: 8px;
+    min-width: 200px;
+    z-index: 1100;
+    animation: fadeIn 0.2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    transition: background 0.2s ease;
+  }
+
+  .dropdown-item:hover {
+    background: var(--panel-sub);
+  }
+
+  .dropdown-item img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  .arrow-down {
+    border: solid currentColor;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    margin-left: 2px;
+  }
+
+  .dropdown.active .arrow-down {
+    transform: rotate(-135deg);
+  }
+
+  /* Блок контактов для мобильного меню */
+  .mobile-contacts-block {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 16px;
   }
 
   /* HERO */
@@ -617,30 +694,56 @@
     box-shadow:0 0 0 4px rgba(255,106,26,.12);
   }
 
-  /* FLOAT BUTTON */
+  /* FLOAT DROPDOWN BUTTON (Кнопка в углу) */
+  .float-dropdown-container {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 999;
+  }
+
   .tg-float{
-    position:fixed;
-    right:24px;
-    bottom:24px;
     background:#0066ff;
     color:white;
     padding:16px 24px;
     border-radius:30px;
     font-weight:700;
-    text-decoration:none;
     box-shadow:0 10px 25px rgba(0,102,255,.3);
-    z-index:999;
     transition:all .25s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
   }
 
   .tg-float:hover{
     transform:translateY(-3px);
     box-shadow:0 14px 30px rgba(0,102,255,.45);
     background:#0052cc;
+  }
+
+  .float-dropdown-menu {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 12px);
+    right: 0;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(15,23,42,0.15);
+    padding: 8px;
+    min-width: 220px;
+    animation: slideUp 0.2s ease;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .float-dropdown-container.active .float-dropdown-menu {
+    display: block;
   }
 
   /* SUCCESS MESSAGE */
@@ -707,12 +810,12 @@
       display: flex;
     }
 
-    /* Скрываем десктопные ссылки и убираем кнопку МАКС из шапки */
-    .nav .btn {
+    /* Скрываем десктопный выпадающий блок из шапки */
+    .nav .dropdown {
       display: none;
     }
 
-    /* Современное выпадающее оверлей-меню */
+    /* Полноэкранное меню */
     .navlinks {
       position: fixed;
       top: 0;
@@ -722,18 +825,24 @@
       background: var(--panel);
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 32px;
-      font-size: 22px;
+      justify-content: flex-start;
+      gap: 24px;
+      font-size: 20px;
       font-weight: 700;
       z-index: 1000;
       transform: translateY(-100%);
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      padding: 40px;
+      padding: 100px 40px 40px; /* Отступ сверху для бренда */
+      overflow-y: auto;
     }
 
     .navlinks a {
       color: var(--text);
+    }
+
+    /* Внутри мобильного меню показываем список контактов вместо кнопки */
+    .mobile-contacts-block {
+      display: flex;
     }
 
     /* Состояние открытого меню */
@@ -791,9 +900,12 @@
       padding:20px;
     }
 
-    .tg-float{
+    .float-dropdown-container{
       right:16px;
       bottom:16px;
+    }
+
+    .tg-float {
       padding:14px 20px;
     }
 
@@ -842,8 +954,39 @@
         <a href="#materials" onclick="toggleMenu()">Материалы</a>
         <a href="#process" onclick="toggleMenu()">Процесс</a>
         <a href="#contact" onclick="toggleMenu()">Контакты</a>
+
+        <!-- Блок контактов, видимый ТОЛЬКО внутри раскрытого мобильного меню -->
+        <div class="mobile-contacts-block">
+          <a class="dropdown-item" style="background: #0066ff; color: #fff;" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer">
+            <span>💬 Написать в МАКС</span>
+          </a>
+          <a class="dropdown-item" style="background: #22a5e2; color: #fff;" href="https://t.me/unitrus_merch" target="_blank" rel="noreferrer">
+            <span>✈️ Написать в Telegram</span>
+          </a>
+          <a class="dropdown-item" style="background: var(--panel-sub); color: var(--text);" href="mailto:sport.merch@inbox.ru">
+            <span>✉️ Написать на Почту</span>
+          </a>
+        </div>
       </div>
-      <a class="btn" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer">Написать в МАКС</a>
+
+      <!-- Десктопное выпадающее меню -->
+      <div class="dropdown" id="navDropdown">
+        <button class="btn" id="dropdownBtn">
+          Написать нам <span class="arrow-down"></span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer">
+            <span>💬 в МАКС</span>
+          </a>
+          <a class="dropdown-item" href="https://t.me/unitrus_merch" target="_blank" rel="noreferrer">
+            <span>✈️ в Telegram</span>
+          </a>
+          <a class="dropdown-item" href="mailto:sport.merch@inbox.ru">
+            <span>✉️ на Почту</span>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -863,7 +1006,7 @@
           <a class="btn secondary" href="#products">Смотреть продукт</a>
         </div>
 
-        <div class="hint" style="margin-top: 12px;">⚡ Ответим и сделаем расчёт за 15 минут в МАКС</div>
+        <div class="hint" style="margin-top: 12px;">⚡ Ответим и сделаем расчёт за 15 минут в удобном вам мессенджере</div>
 
         <div class="kpis">
           <a href="#catalog" class="chip"><b>Разная</b> плотность</a>
@@ -941,7 +1084,7 @@
         <div class="grid3">
           <div class="card pcard">
             <p class="pname">1) Бриф</p>
-            <p class="ptext">Цель, тираж, сроки, бюджет, референсы и пожелания по стилю.</p>
+            <p class="ptext">Цель, тираж, сроки, budget, референсы и пожелания по стилю.</p>
           </div>
           <div class="card pcard">
             <p class="pname">2) Согласование</p>
@@ -960,7 +1103,7 @@
         <div class="card pad">
           <h2>Связаться</h2>
           <p class="sub" style="margin-top:0">
-            Напиши в МАКС или позвони — уточним тираж, сроки и предложим варианты по материалам и нанесению.
+            Напишите нам в удобный мессенджер или позвоните — уточним тираж, сроки и предложим варианты по материалам и нанесению.
           </p>
 
           <div class="kpis">
@@ -971,8 +1114,10 @@
         </div>
 
         <div class="card contactBox">
-          <a class="btn" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer">Написать в МАКС</a>
-          <a class="btn secondary" href="tel:+79930917619">Позвонить: +7 993 091 7619</a>
+          <div class="hint" style="text-align: center; font-weight: 600; margin-bottom: -4px;">Выберите способ связи:</div>
+          <a class="btn" style="background: #0066ff; border-color: #0066ff;" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer">💬 Написать в МАКС</a>
+          <a class="btn" style="background: #22a5e2; border-color: #22a5e2;" href="https://t.me/unitrus_merch" target="_blank" rel="noreferrer">✈️ Написать в Telegram</a>
+          <a class="btn secondary" href="tel:+79930917619">📞 Позвонить: +7 993 091 7619</a>
           <div class="hint">Чем точнее напишешь “тираж + сроки + что нужно”, тем быстрее дадим расчёт.</div>
         </div>
       </div>
@@ -1174,6 +1319,23 @@
     <img id="lightbox-img" class="lightbox-img" src="">
   </div>
 
+  <!-- Плавающая кнопка в углу с выбором -->
+  <div class="float-dropdown-container" id="floatDropdown">
+    <div class="float-dropdown-menu">
+      <a class="dropdown-item" href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" target="_blank" rel="noreferrer">💬 написать в МАКС</a>
+      <a class="dropdown-item" href="https://t.me/unitrus_merch" target="_blank" rel="noreferrer">✈️ написать в Telegram</a>
+      <a class="dropdown-item" href="mailto:sport.merch@inbox.ru">✉️ написать на Почту</a>
+    </div>
+    <button class="tg-float" id="floatBtn">
+      ⚡ Написать нам
+    </button>
+  </div>
+
+  <div id="success-message" class="success-message">
+    ✅ Заявка успешно отправлена!<br>
+    Мы свяжемся с вами в течение 15 минут.
+  </div>
+
   <script>
   function openLightbox(src){
     document.getElementById('lightbox-img').src = src;
@@ -1184,7 +1346,7 @@
     document.getElementById('lightbox').classList.remove('show');
   }
 
-  // Скрипт для открытия/закрытия мобильного меню
+  // Мобильное меню бургер
   const menuBtn = document.getElementById('menuBtn');
   const navbar = document.getElementById('navbar');
 
@@ -1197,22 +1359,34 @@
       navbar.classList.remove('nav-open');
     }
   }
-  </script>
 
-  <!-- Кнопка МАКС -->
-  <a href="https://max.ru/join/a83h0s4yrCoKQxjAOf_HXiF2FxhiVPw9wYMBm2Ftr7E" class="tg-float" target="_blank" rel="noreferrer">
-    💬 Написать в МАКС
-  </a>
+  // Логика работы десктопного выпадающего меню (в шапке)
+  const navDropdown = document.getElementById('navDropdown');
+  const dropdownBtn = document.getElementById('dropdownBtn');
 
-  <div id="success-message" class="success-message">
-    ✅ Заявка успешно отправлена!<br>
-    Мы свяжемся с вами в течение 15 минут.
-  </div>
+  dropdownBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navDropdown.classList.toggle('active');
+  });
 
-  <script>
+  // Логика работы выпадающего меню для плавающей кнопки в углу
+  const floatDropdown = document.getElementById('floatDropdown');
+  const floatBtn = document.getElementById('floatBtn');
+
+  floatBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    floatDropdown.classList.toggle('active');
+  });
+
+  // Закрывать выпадающие списки при клике в любое другое место экрана
+  document.addEventListener('click', () => {
+    navDropdown.classList.remove('active');
+    floatDropdown.classList.remove('active');
+  });
+
+  // Проверка отправки формы
   if(window.location.search.includes("sent=1")){
     document.getElementById("success-message").style.display="block";
-
     setTimeout(function(){
       document.getElementById("success-message").style.display="none";
     },5000);
@@ -1220,14 +1394,6 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
