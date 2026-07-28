@@ -38,13 +38,14 @@
   
   <style>
   :root{
-    --bg:#f8fafc;
-    --panel:#ffffff;
-    --panel-sub:#f1f5f9;
-    --text:#0f172a;
-    --muted:#64748b;
-    --line:rgba(15,23,42,.08);
-    --accent:#ff6a1a;
+    /* Тёмная премиальная палитра */
+    --bg:#0e1117;           /* Основной глубокий графитовый фон */
+    --panel:#161b22;        /* Фон карточек и плашек */
+    --panel-sub:#1f242d;    /* Вторичный фон */
+    --text:#f0f6fc;         /* Основной светлый текст */
+    --muted:#8b949e;        /* Мутный/серый текст */
+    --line:rgba(255,255,255,.08); /* Полупрозрачные разделители */
+    --accent:#ff6a1a;       /* Оранжевый акцент */
     --max:1180px;
     --r:20px;
   }
@@ -57,8 +58,8 @@
     margin:0;
     font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
     background:
-      radial-gradient(1000px 600px at 10% -10%, rgba(255,106,26,.07), transparent 50%),
-      radial-gradient(800px 600px at 100% 40%, rgba(15,23,42,.02), transparent 50%),
+      radial-gradient(1000px 600px at 10% -10%, rgba(255,106,26,.12), transparent 50%),
+      radial-gradient(800px 600px at 100% 40%, rgba(255,255,255,.02), transparent 50%),
       var(--bg);
     color:var(--text);
     -webkit-font-smoothing: antialiased;
@@ -81,7 +82,7 @@
     top:0;
     z-index:1000;
     backdrop-filter:blur(16px);
-    background:rgba(248, 250, 252, 0.85);
+    background:rgba(14, 17, 23, 0.85);
     border-bottom:1px solid var(--line);
   }
 
@@ -180,15 +181,15 @@
     border:1px solid var(--line);
     background:var(--panel);
     color:var(--text);
-    box-shadow:0 4px 12px rgba(0,0,0,.03);
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
   }
 
   .btn.secondary:hover{
     background:var(--panel-sub);
-    border-color:rgba(15,23,42,.15);
+    border-color:rgba(255,255,255,.2);
     color:var(--text);
     transform:translateY(-2px);
-    box-shadow:0 6px 16px rgba(0,0,0,.06);
+    box-shadow:0 6px 16px rgba(0,0,0,.2);
   }
 
   /* Компонент Выпадающего меню контактов */
@@ -205,7 +206,7 @@
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 16px;
-    box-shadow: 0 12px 32px rgba(15,23,42,0.12);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
     padding: 8px;
     min-width: 200px;
     z-index: 1100;
@@ -283,7 +284,7 @@
     background:var(--panel);
     border-radius:var(--r);
     overflow:hidden;
-    box-shadow:0 4px 24px rgba(15,23,42,.03);
+    box-shadow:0 4px 24px rgba(0,0,0,.2);
   }
 
   .heroText{
@@ -346,7 +347,7 @@
     position:relative;
     min-height:400px;
     background:
-      linear-gradient(90deg, rgba(248,250,252,.1), transparent),
+      linear-gradient(90deg, rgba(14,17,23,.2), transparent),
       url("assets/hero.jpg") center/cover no-repeat;
   }
 
@@ -357,10 +358,10 @@
     padding:16px;
     border-radius:16px;
     border:1px solid var(--line);
-    background:rgba(255,255,255,0.9);
+    background:rgba(22, 27, 34, 0.85);
     backdrop-filter:blur(12px);
     max-width:320px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
   }
 
   .badge .t{
@@ -406,7 +407,7 @@
   }
   
   .pcard:hover{
-    border-color:rgba(255,106,26,.3);
+    border-color:rgba(255,106,26,.4);
     transform:translateY(-2px);
   }
 
@@ -535,13 +536,13 @@
     border-radius:20px;
     overflow:hidden;
     transition:transform .25s cubic-bezier(0.4, 0, 0.2, 1), border-color .25s ease, box-shadow .25s ease;
-    box-shadow:0 4px 16px rgba(15,23,42,.02);
+    box-shadow:0 4px 16px rgba(0,0,0,.2);
   }
 
   .catalog-card:hover{
     transform:translateY(-6px);
     border-color:var(--accent);
-    box-shadow:0 16px 36px rgba(15,23,42,.08);
+    box-shadow:0 16px 36px rgba(0,0,0,.4);
   }
 
   .catalog-card img{
@@ -578,8 +579,8 @@
     font-weight:600;
     line-height:1.4;
     color:var(--accent);
-    border:1px solid rgba(255,106,26,.15);
-    background:rgba(255,106,26,.05);
+    border:1px solid rgba(255,106,26,.3);
+    background:rgba(255,106,26,.1);
     padding:8px 14px;
     border-radius:999px;
     cursor:pointer;
@@ -597,7 +598,7 @@
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(15,23,42,.95);
+    background:rgba(0,0,0,.92);
     z-index:9999;
     align-items:center;
     justify-content:center;
@@ -612,7 +613,7 @@
     max-width:95%;
     max-height:90%;
     border-radius:14px;
-    box-shadow:0 24px 60px rgba(0,0,0,.5);
+    box-shadow:0 24px 60px rgba(0,0,0,.8);
   }
 
   .lightbox-close{
@@ -646,7 +647,7 @@
     border:1px solid var(--line);
     border-radius:24px;
     padding:32px;
-    box-shadow:0 10px 40px rgba(15,23,42,.04);
+    box-shadow:0 10px 40px rgba(0,0,0,.3);
   }
 
   .form-grid{
@@ -672,7 +673,7 @@
   .field textarea{
     width:100%;
     background:var(--panel-sub);
-    border:1px solid rgba(15,23,42,.08);
+    border:1px solid var(--line);
     color:var(--text);
     border-radius:12px;
     padding:14px 16px;
@@ -691,10 +692,10 @@
   .field textarea:focus{
     border-color:var(--accent);
     background:var(--panel);
-    box-shadow:0 0 0 4px rgba(255,106,26,.12);
+    box-shadow:0 0 0 4px rgba(255,106,26,.15);
   }
 
-  /* FLOAT DROPDOWN BUTTON (Кнопка в углу) */
+  /* FLOAT DROPDOWN BUTTON */
   .float-dropdown-container {
     position: fixed;
     right: 24px;
@@ -731,7 +732,7 @@
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 16px;
-    box-shadow: 0 12px 32px rgba(15,23,42,0.15);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
     padding: 8px;
     min-width: 220px;
     animation: slideUp 0.2s ease;
@@ -758,7 +759,7 @@
     color:var(--text);
     font-size:15px;
     font-weight:600;
-    box-shadow:0 16px 40px rgba(15,23,42,.12);
+    box-shadow:0 16px 40px rgba(0,0,0,.5);
     display:none;
     z-index:9999;
     text-align:left;
@@ -805,17 +806,14 @@
       padding: 16px 0;
     }
 
-    /* Показываем кнопку бургера */
     .menu-toggle {
       display: flex;
     }
 
-    /* Скрываем десктопный выпадающий блок из шапки */
     .nav .dropdown {
       display: none;
     }
 
-    /* Полноэкранное меню */
     .navlinks {
       position: fixed;
       top: 0;
@@ -832,7 +830,7 @@
       z-index: 1000;
       transform: translateY(-100%);
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      padding: 100px 40px 40px; /* Отступ сверху для бренда */
+      padding: 100px 40px 40px;
       overflow-y: auto;
     }
 
@@ -840,17 +838,14 @@
       color: var(--text);
     }
 
-    /* Внутри мобильного меню показываем список контактов вместо кнопки */
     .mobile-contacts-block {
       display: flex;
     }
 
-    /* Состояние открытого меню */
     .nav.nav-open .navlinks {
       transform: translateY(0);
     }
 
-    /* Анимация иконки бургера в крестик */
     .nav.nav-open .menu-toggle span:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
     }
@@ -997,7 +992,7 @@
 
         <p class="sub">
           Казань • работаем по России • самая доступная цена • контроль качества.<br>
-          • Худи, футболки, куртки, бейсболки и весь мерч под желание клиента.<br>
+          • Худи, футболка, куртки, бейсболки и весь мерч под желание клиента.<br>
           • Дизайн в подарок при заказе от 50 шт.
         </p>
 
@@ -1301,7 +1296,7 @@
           <label for="message">Комментарий к заказу</label>
           <textarea id="message" name="Комментарий" rows="5" placeholder="Опишите тираж, пожелания по материалу, нанесению или срокам..."></textarea>
         </div>
-<label style="font-size: 12px; display: block; margin-bottom: 12px; color: #666; cursor: pointer;">
+        <label style="font-size: 12px; display: block; margin-bottom: 12px; color: var(--muted); cursor: pointer;">
           <input type="checkbox" required checked style="margin-right: 6px; cursor: pointer;">
           Я согласен на <a href="consent.html" target="_blank" style="color: inherit; text-decoration: underline;">обработку персональных данных</a> 
           и ознакомлен с <a href="privacy.html" target="_blank" style="color: inherit; text-decoration: underline;">политикой конфиденциальности</a>.
@@ -1311,16 +1306,14 @@
     </div>
   </section>
 
-  
-
   <footer>
     <div class="wrap" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
       <div>© UNITRUS</div>
       <div>Corporate clothing and merch • Казань • Россия</div>
       <div class="legal-links">
-    <a href="privacy.html" target="_blank">Политика конфиденциальности</a> | 
-    <a href="consent.html" target="_blank">Согласие на обработку ПДн</a>
-</div>
+        <a href="privacy.html" target="_blank">Политика конфиденциальности</a> | 
+        <a href="consent.html" target="_blank">Согласие на обработку ПДн</a>
+      </div>
     </div>
   </footer>
 
@@ -1404,41 +1397,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
