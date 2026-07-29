@@ -766,13 +766,42 @@
     max-width:340px;
   }
 
-  /* FOOTER */
-  footer{
-    padding:40px 0;
-    border-top:1px solid var(--line);
-    color:var(--muted);
-    background:var(--panel-sub);
-    font-size:14px;
+ /* FOOTER */
+  footer {
+    padding: 40px 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    background: var(--panel-sub);
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 24px;
+  }
+
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: var(--text);
   }
 
   /* RESPONSIVE & MOBILE MENU */
@@ -1307,12 +1336,14 @@
   </section>
 
   <footer>
-    <div class="wrap" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-      <div>© UNITRUS</div>
-      <div>Corporate clothing and merch • Казань • Россия</div>
-      <div class="legal-links">
-        <a href="privacy.html" target="_blank">Политика конфиденциальности</a> | 
-        <a href="consent.html" target="_blank">Согласие на обработку ПДн</a>
+    <div class="wrap">
+      <div class="footer-content">
+        <div>© UNITRUS • Corporate clothing and merch • Казань • Россия</div>
+        <div class="footer-links">
+          <a href="privacy.html" target="_blank">Политика конфиденциальности</a>
+          <span>|</span>
+          <a href="consent.html" target="_blank">Согласие на обработку ПДн</a>
+        </div>
       </div>
     </div>
   </footer>
