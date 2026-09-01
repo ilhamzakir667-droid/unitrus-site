@@ -1,0 +1,130 @@
+.cookie-consent {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(5, 7, 10, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+.cookie-consent[hidden] {
+  display: none;
+}
+
+body.cookie-consent-open {
+  overflow: hidden;
+}
+
+.cookie-consent__dialog {
+  width: min(620px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  background: #161b22;
+  color: #f0f6fc;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.65);
+  font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.cookie-consent__eyebrow {
+  margin: 0 0 8px;
+  color: #ff6a1a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cookie-consent__title {
+  margin: 0 0 12px;
+  color: #f0f6fc;
+  font-size: clamp(24px, 5vw, 32px);
+  line-height: 1.15;
+}
+
+.cookie-consent__text {
+  margin: 0;
+  color: #b1bac4;
+}
+
+.cookie-consent__text a {
+  color: #f0f6fc;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cookie-consent__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cookie-consent__button {
+  min-height: 50px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: #1f242d;
+  color: #f0f6fc;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.cookie-consent__button:hover,
+.cookie-consent__button:focus-visible {
+  transform: translateY(-1px);
+  border-color: #ff6a1a;
+  outline: none;
+}
+
+.cookie-consent__button--accept {
+  border-color: #ff6a1a;
+  background: #ff6a1a;
+  color: #fff;
+}
+
+.cookie-consent__button--accept:hover,
+.cookie-consent__button--accept:focus-visible {
+  background: #e55a13;
+}
+
+.cookie-settings-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .cookie-consent {
+    align-items: end;
+    padding: 12px;
+  }
+
+  .cookie-consent__dialog {
+    max-height: calc(100vh - 24px);
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .cookie-consent__actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cookie-consent__button {
+    transition: none;
+  }
+}

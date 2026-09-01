@@ -6,6 +6,9 @@
   <title>Цены и условия — UNITRUS</title>
   <meta name="description" content="Цены на корпоративную одежду и мерч UNITRUS. Худи, футболки, ветровки, форма и аксессуары под заказ. Производство от 15 дней.">
   <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="canonical" href="https://unitrus.ru/prices.html">
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <script src="/assets/cookie-consent.js" defer></script>
 
   <style>
     :root{
@@ -241,6 +244,34 @@
       margin-top:36px;
     }
 
+    .price-note{
+      margin:20px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    footer{
+      padding:36px 20px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      background:rgba(255,255,255,.02);
+      font-size:14px;
+      text-align:center;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px 18px;
+      margin-top:12px;
+    }
+
+    .footer-links a,
+    .footer-links button{
+      color:var(--muted);
+    }
+
     @media (max-width: 920px){
       .navin{
         flex-direction:column;
@@ -370,15 +401,20 @@
         </div>
       </div>
 
+      <p class="price-note">
+        Цены указаны справочно. Итоговая стоимость зависит от тиража, модели, материала,
+        способа нанесения, курса валют и условий доставки и фиксируется после согласования заказа.
+      </p>
+
       <div class="stats">
         <div class="stat">
-          <strong>50+</strong>
-          реализованных заказов
+          <strong>Под задачу</strong>
+          подбор модели и материала
         </div>
 
         <div class="stat">
-          <strong>5000+</strong>
-          единиц одежды произведено
+          <strong>Китай</strong>
+          производство у фабрик-партнёров
         </div>
 
         <div class="stat">
@@ -399,8 +435,8 @@
           <div class="why-card">
             <h3>Прямое производство</h3>
             <p>
-              Мы размещаем заказы напрямую на нащей фабрике без посредников,
-              поэтому стоимость производства ниже, чем у большинства поставщиков.
+              Мы размещаем заказы у проверенных фабрик-партнёров в Китае
+              и подбираем производство под тираж, материал и бюджет проекта.
             </p>
           </div>
 
@@ -450,5 +486,16 @@
       </div>
     </div>
   </main>
+
+  <footer>
+    <div>© UNITRUS • Закиров Ильгам Радикович • Самозанятый • Казань • Россия</div>
+    <div>Телефон: <a href="tel:+79930917619">+7 993 091-76-19</a> • Email: <a href="mailto:sport.merch@inbox.ru">sport.merch@inbox.ru</a></div>
+    <div class="footer-links">
+      <a href="/privacy.html" target="_blank">Политика обработки ПДн</a>
+      <a href="/consent.html" target="_blank">Согласие на аналитику</a>
+      <a href="/cookies.html" target="_blank">Правила cookies</a>
+      <button type="button" class="cookie-settings-button" data-cookie-settings>Настройки cookies</button>
+    </div>
+  </footer>
 </body>
 </html>

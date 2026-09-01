@@ -32,6 +32,8 @@
   <title>UNITRUS — корпоративная одежда и мерч</title>
   <meta name="description" content="UNITRUS — корпоративная и спортивная одежда, мерч на заказ: худи, футболки, брендированные комплекты для компаний. Производство под задачу бренда, доставка по России. Казань." />
   <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <script src="/assets/cookie-consent.js" defer></script>
   <link rel="canonical" href="https://unitrus.ru/">
   <meta http-equiv="Content-Language" content="ru">
   <meta name="robots" content="index,follow">
@@ -626,75 +628,6 @@
     cursor:pointer;
   }
 
-  /* FORM */
-  .leadform{
-    padding:40px 0 60px;
-  }
-
-  .leadform h2{
-    margin:0 0 12px;
-  }
-
-  .leadform-sub{
-    margin:0 0 24px;
-    color:var(--muted);
-    max-width:760px;
-    line-height:1.6;
-  }
-
-  .quote-form{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:24px;
-    padding:32px;
-    box-shadow:0 10px 40px rgba(0,0,0,.3);
-  }
-
-  .form-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-  }
-
-  .field{
-    display:grid;
-    gap:8px;
-    margin-bottom:20px;
-  }
-
-  .field label{
-    font-size:14px;
-    font-weight:600;
-    color:var(--text);
-  }
-
-  .field input,
-  .field select,
-  .field textarea{
-    width:100%;
-    background:var(--panel-sub);
-    border:1px solid var(--line);
-    color:var(--text);
-    border-radius:12px;
-    padding:14px 16px;
-    font:inherit;
-    outline:none;
-    transition:all .2s ease;
-  }
-
-  .field textarea{
-    resize:vertical;
-    min-height:120px;
-  }
-
-  .field input:focus,
-  .field select:focus,
-  .field textarea:focus{
-    border-color:var(--accent);
-    background:var(--panel);
-    box-shadow:0 0 0 4px rgba(255,106,26,.15);
-  }
-
   /* FLOAT DROPDOWN BUTTON */
   .float-dropdown-container {
     position: fixed;
@@ -745,25 +678,6 @@
 
   .float-dropdown-container.active .float-dropdown-menu {
     display: block;
-  }
-
-  /* SUCCESS MESSAGE */
-  .success-message{
-    position:fixed;
-    left:24px;
-    bottom:24px;
-    background:var(--panel);
-    border:1px solid var(--accent);
-    padding:16px 24px;
-    border-radius:16px;
-    color:var(--text);
-    font-size:15px;
-    font-weight:600;
-    box-shadow:0 16px 40px rgba(0,0,0,.5);
-    display:none;
-    z-index:9999;
-    text-align:left;
-    max-width:340px;
   }
 
  /* FOOTER */
@@ -916,14 +830,6 @@
       padding:16px;
     }
 
-    .form-grid{
-      grid-template-columns:1fr;
-    }
-
-    .quote-form{
-      padding:20px;
-    }
-
     .float-dropdown-container{
       right:16px;
       bottom:16px;
@@ -933,28 +839,8 @@
       padding:14px 20px;
     }
 
-    .success-message{
-      left:16px;
-      right:16px;
-      bottom:90px;
-      max-width:none;
-    }
   }
   </style>
-  
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-      (function(m,e,t,r,i,k,a){
-          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-          m[i].l=1*new Date();
-          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107053501', 'ym');
-
-      ym(107053501, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/107053501" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -1020,17 +906,17 @@
         <h1> ЮНАЙТ РУС — корпоративная одежда и мерч под ключ</h1>
 
         <p class="sub">
-          Казань • работаем по России • самая доступная цена • контроль качества.<br>
+          Казань • работаем по России • цена под тираж и задачу • контроль качества.<br>
           • Худи, футболка, куртки, бейсболки и весь мерч под желание клиента.<br>
           • Дизайн в подарок при заказе от 50 шт.
         </p>
 
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn" href="#leadform">Получить расчёт</a>
+          <a class="btn" href="#contact">Получить расчёт</a>
           <a class="btn secondary" href="#products">Смотреть продукт</a>
         </div>
 
-        <div class="hint" style="margin-top: 12px;">⚡ Ответим и сделаем расчёт за 15 минут в удобном вам мессенджере</div>
+        <div class="hint" style="margin-top: 12px;">⚡ Ответим в удобном вам мессенджере и подготовим расчёт</div>
 
         <div class="kpis">
           <a href="#catalog" class="chip"><b>Разная</b> плотность</a>
@@ -1276,73 +1162,19 @@
     </div>
   </section>
 
-  <section class="leadform" id="leadform">
-    <div class="wrap">
-      <h2>Запросить расчёт</h2>
-      <p class="leadform-sub">
-        Оставьте контакты и коротко опишите задачу. Мы свяжемся с вами и подготовим индивидуальный расчёт стоимости.
-      </p>
-
-      <form action="https://formsubmit.co/sport.merch@inbox.ru" method="POST" class="quote-form">
-        <input type="hidden" name="_subject" value="Новая заявка с сайта UNITRUS">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://unitrus.ru/?sent=1">
-
-        <div class="form-grid">
-          <div class="field">
-            <label for="name">Имя</label>
-            <input id="name" name="Имя" type="text" placeholder="Ваше имя" required>
-          </div>
-
-          <div class="field">
-            <label for="phone">Телефон</label>
-            <input id="phone" name="Телефон" type="tel" placeholder="+7 (999) 999-99-99" required>
-          </div>
-
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="Email" type="email" placeholder="you@example.com" required>
-          </div>
-
-          <div class="field">
-            <label for="product">Что интересует</label>
-            <select id="product" name="Интерес">
-              <option value="Худи">Худи</option>
-              <option value="Футболки и поло">Футболки и поло</option>
-              <option value="Кофты на молнии">Кофты на молнии</option>
-              <option value="Ветровки">Ветровки</option>
-              <option value="Спортивная форма">Спортивная форма</option>
-              <option value="Головные уборы">Головные уборы</option>
-              <option value="Рюкзаки">Рюкзаки</option>
-              <option value="Сумки">Сумки</option>
-              <option value="Другое">Другое</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="message">Комментарий к заказу</label>
-          <textarea id="message" name="Комментарий" rows="5" placeholder="Опишите тираж, пожелания по материалу, нанесению или срокам..."></textarea>
-        </div>
-        <label style="font-size: 12px; display: block; margin-bottom: 12px; color: var(--muted); cursor: pointer;">
-          <input type="checkbox" required checked style="margin-right: 6px; cursor: pointer;">
-          Я согласен на <a href="consent.html" target="_blank" style="color: inherit; text-decoration: underline;">обработку персональных данных</a> 
-          и ознакомлен с <a href="privacy.html" target="_blank" style="color: inherit; text-decoration: underline;">политикой конфиденциальности</a>.
-        </label>
-        <button type="submit" class="btn">Отправить заявку</button>
-      </form>
-    </div>
-  </section>
-
   <footer>
     <div class="wrap">
       <div class="footer-content">
-        <div>© UNITRUS • Corporate clothing and merch • Казань • Россия</div>
+        <div>© UNITRUS • Закиров Ильгам Радикович • Самозанятый • Казань • Россия</div>
+        <div>Телефон: <a href="tel:+79930917619">+7 993 091-76-19</a> • Email: <a href="mailto:sport.merch@inbox.ru">sport.merch@inbox.ru</a></div>
         <div class="footer-links">
-          <a href="privacy.html" target="_blank">Политика конфиденциальности</a>
+          <a href="privacy.html" target="_blank">Политика обработки ПДн</a>
           <span>|</span>
-          <a href="consent.html" target="_blank">Согласие на обработку ПДн</a>
+          <a href="consent.html" target="_blank">Согласие на аналитику</a>
+          <span>|</span>
+          <a href="cookies.html" target="_blank">Правила cookies</a>
+          <span>|</span>
+          <button type="button" class="cookie-settings-button" data-cookie-settings>Настройки cookies</button>
         </div>
       </div>
     </div>
@@ -1363,11 +1195,6 @@
     <button class="tg-float" id="floatBtn">
       ⚡ Написать нам
     </button>
-  </div>
-
-  <div id="success-message" class="success-message">
-    ✅ Заявка успешно отправлена!<br>
-    Мы свяжемся с вами в течение 15 минут.
   </div>
 
   <script>
@@ -1418,13 +1245,6 @@
     floatDropdown.classList.remove('active');
   });
 
-  // Проверка отправки формы
-  if(window.location.search.includes("sent=1")){
-    document.getElementById("success-message").style.display="block";
-    setTimeout(function(){
-      document.getElementById("success-message").style.display="none";
-    },5000);
-  }
   </script>
 </body>
 </html>
