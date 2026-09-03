@@ -279,6 +279,7 @@
     grid-template-columns:1.15fr .85fr;
     gap:24px;
     align-items:stretch;
+    perspective:1400px;
   }
 
   .card{
@@ -294,6 +295,21 @@
     display:flex;
     flex-direction:column;
     justify-content:center;
+    position:relative;
+    background:
+      radial-gradient(circle at 8% 0%, rgba(255,106,26,.12), transparent 36%),
+      var(--panel);
+  }
+
+  .heroText::before{
+    content:"";
+    position:absolute;
+    width:92px;
+    height:3px;
+    top:0;
+    left:40px;
+    border-radius:0 0 999px 999px;
+    background:linear-gradient(90deg, var(--accent), rgba(255,106,26,0));
   }
 
   h1{
@@ -346,11 +362,31 @@
   }
 
   .heroVisual{
+    --tilt-x:0deg;
+    --tilt-y:0deg;
+    --light-x:50%;
+    --light-y:50%;
     position:relative;
     min-height:400px;
     background:
       linear-gradient(90deg, rgba(14,17,23,.2), transparent),
       url("assets/hero.jpg") center/cover no-repeat;
+    transform:perspective(1100px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+    transform-style:preserve-3d;
+    transform-origin:center;
+    transition:transform .28s cubic-bezier(.2,.8,.2,1), border-color .25s ease, box-shadow .25s ease;
+    will-change:transform;
+  }
+
+  .heroVisual::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background:radial-gradient(circle at var(--light-x) var(--light-y), rgba(255,255,255,.18), transparent 34%);
+    opacity:.6;
+    mix-blend-mode:soft-light;
   }
 
   .badge{
@@ -364,6 +400,8 @@
     backdrop-filter:blur(12px);
     max-width:320px;
     box-shadow:0 10px 30px rgba(0,0,0,.3);
+    z-index:2;
+    transform:translateZ(38px);
   }
 
   .badge .t{
@@ -436,8 +474,26 @@
   }
 
   .fabric{
+    --tilt-x:0deg;
+    --tilt-y:0deg;
+    --light-x:50%;
+    --light-y:50%;
     min-height:380px;
     background:url("assets/fabric.jpg") center/cover no-repeat;
+    position:relative;
+    transform:perspective(1100px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+    transform-style:preserve-3d;
+    transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
+    will-change:transform;
+  }
+
+  .fabric::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:radial-gradient(circle at var(--light-x) var(--light-y), rgba(255,255,255,.2), transparent 38%);
+    mix-blend-mode:soft-light;
   }
 
   .pad{
@@ -461,8 +517,50 @@
   /* GALLERY */
   .gallery{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
+    grid-template-columns:1.08fr .92fr;
+    gap:22px;
+    align-items:start;
+    padding-bottom:54px;
+  }
+
+  .case-intro{
+    display:grid;
+    grid-template-columns:minmax(280px, .75fr) 1.25fr;
+    gap:24px;
+    align-items:end;
+    margin-bottom:24px;
+  }
+
+  .case-intro h2,
+  .case-intro .sub{
+    margin-bottom:0;
+  }
+
+  .case-card{
+    position:relative;
+  }
+
+  .case-card:nth-child(2){
+    margin-top:68px;
+  }
+
+  .case-label{
+    position:absolute;
+    left:18px;
+    bottom:18px;
+    z-index:2;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 13px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:999px;
+    color:#fff;
+    background:rgba(10,12,16,.72);
+    backdrop-filter:blur(12px);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.02em;
   }
 
   .img{
@@ -472,11 +570,12 @@
     display:block;
     transition:transform .3s ease;
   }
-  
+
   .gallery .card{
     border:none;
+    box-shadow:0 24px 60px rgba(0,0,0,.28);
   }
-  
+
   .gallery .card:hover .img{
     transform:scale(1.02);
   }
@@ -529,22 +628,48 @@
     display:grid;
     grid-template-columns:repeat(4, 1fr);
     gap:20px;
-    align-items:start;
+    align-items:stretch;
   }
 
   .catalog-card{
+    --tilt-x:0deg;
+    --tilt-y:0deg;
+    --card-lift:0px;
+    --light-x:50%;
+    --light-y:50%;
     background:var(--panel);
     border:1px solid var(--line);
     border-radius:20px;
     overflow:hidden;
     transition:transform .25s cubic-bezier(0.4, 0, 0.2, 1), border-color .25s ease, box-shadow .25s ease;
     box-shadow:0 4px 16px rgba(0,0,0,.2);
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    transform:perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(var(--card-lift));
+    transform-style:preserve-3d;
+    will-change:transform;
   }
 
   .catalog-card:hover{
-    transform:translateY(-6px);
+    --card-lift:-6px;
     border-color:var(--accent);
     box-shadow:0 16px 36px rgba(0,0,0,.4);
+  }
+
+  .catalog-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:2;
+    pointer-events:none;
+    background:radial-gradient(circle at var(--light-x) var(--light-y), rgba(255,255,255,.11), transparent 33%);
+    opacity:0;
+    transition:opacity .25s ease;
+  }
+
+  .catalog-card:hover::after{
+    opacity:1;
   }
 
   .catalog-card img{
@@ -553,10 +678,16 @@
     object-fit:cover;
     display:block;
     cursor:pointer;
+    transition:transform .3s cubic-bezier(.2,.8,.2,1);
+    transform:translateZ(16px) scale(1.002);
   }
 
   .catalog-card__body{
     padding:20px;
+    display:flex;
+    flex:1;
+    flex-direction:column;
+    transform:translateZ(10px);
   }
 
   .catalog-card__body h3{
@@ -587,6 +718,23 @@
     border-radius:999px;
     cursor:pointer;
     transition:.2s ease;
+    align-self:flex-start;
+    margin-top:auto;
+  }
+
+  .catalog-card:hover img{
+    transform:translateZ(22px) scale(1.025);
+  }
+
+  .motion-ready .reveal-section{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity .68s ease, transform .68s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .motion-ready .reveal-section.is-visible{
+    opacity:1;
+    transform:translateY(0);
   }
 
   .catalog-card__body span:hover{
@@ -741,6 +889,35 @@
       padding: 24px;
     }
 
+    .heroText::before{
+      left:24px;
+    }
+
+    .heroVisual,
+    .fabric,
+    .catalog-card{
+      transform:none !important;
+      will-change:auto;
+    }
+
+    .catalog-card img,
+    .catalog-card__body{
+      transform:none;
+    }
+
+    .case-intro{
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+
+    .gallery{
+      padding-bottom:0;
+    }
+
+    .case-card:nth-child(2){
+      margin-top:0;
+    }
+
     .img{
       height:440px;
     }
@@ -840,6 +1017,29 @@
     }
 
   }
+
+  @media (prefers-reduced-motion:reduce){
+    *, *::before, *::after{
+      scroll-behavior:auto !important;
+      animation-duration:.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;
+    }
+
+    .motion-ready .reveal-section{
+      opacity:1;
+      transform:none;
+    }
+
+    .heroVisual,
+    .fabric,
+    .catalog-card,
+    .catalog-card img,
+    .catalog-card__body,
+    .gallery .card:hover .img{
+      transform:none !important;
+    }
+  }
   </style>
 </head>
 
@@ -907,13 +1107,13 @@
 
         <p class="sub">
           Казань • работаем по России • цена под тираж и задачу • контроль качества.<br>
-          • Худи, футболка, куртки, бейсболки и весь мерч под желание клиента.<br>
+          • Худи, футболки, куртки, бейсболки и аксессуары по вашему дизайну.<br>
           • Дизайн в подарок при заказе от 50 шт.
         </p>
 
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
           <a class="btn" href="#contact">Получить расчёт</a>
-          <a class="btn secondary" href="#products">Смотреть продукт</a>
+          <a class="btn secondary" href="#catalog">Смотреть каталог</a>
         </div>
 
         <div class="hint" style="margin-top: 12px;">⚡ Ответим в удобном вам мессенджере и подготовим расчёт</div>
@@ -953,8 +1153,8 @@
             <p class="ptext">Комфортная анатомическая посадка, премиум варианты ткани под любой сезон и задачу.</p>
           </div>
           <div class="card pcard">
-            <p class="pname">Весь мерч</p>
-            <p class="ptext">Стильные комплекты для масштабных мероприятий, топ-команд и корпоративных подарков.</p>
+            <p class="pname">Комплекты и аксессуары</p>
+            <p class="ptext">Собираем цельные комплекты для мероприятий, команд и корпоративных подарков.</p>
           </div>
         </div>
       </div>
@@ -964,9 +1164,9 @@
       <div class="wrap">
         <div class="catalog-head">
           <h2>Каталог продукции</h2>
-          <p>Производим корпоративную одежду и мерч для брендов, команд и компаний. Подбираем модель, material и нанесение под задачу.</p>
+          <p>Производим корпоративную одежду и мерч для брендов, команд и компаний. Подбираем модель, материал и нанесение под задачу.</p>
         </div>
-  
+
         <div class="catalog-grid">
           <article class="catalog-card">
             <img src="assets/catalog-tshirts.jpg" alt="Футболки и поло UNITRUS" onclick="openLightbox(this.src)">
@@ -1065,23 +1265,31 @@
         <div class="card pad">
           <h2>Материалы и качество</h2>
           <ul class="list">
-            <li>Все логотипы, дизайны — под желание клиента корпоративный tech.</li>
+            <li>Логотип, цвет и детали — под фирменный стиль и задачу вашей команды.</li>
             <li>Фактура ткани как главный аргумент: видно качество без лишних слов.</li>
-            <li>Акцентный цвет для деталей и CTA.</li>
+            <li>Акцентные цвета и детали согласуем до производства.</li>
             <li>Нанесение: печать / вышивка / шевроны — под вашу задачу.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="case-study">
       <div class="wrap">
-        <h2>Фото продукта</h2>
-        <p class="sub" style="margin-top:0">Кейсы на модели — готовый продукт для бегового клуба FIRE RUN INNO.</p>
+        <div class="case-intro">
+          <h2>Реальный заказ: FIRE RUN INNO</h2>
+          <p class="sub">Корпоративная форма в живой съёмке — так выглядит готовый комплект на участниках клуба.</p>
+        </div>
 
         <div class="gallery">
-          <div class="card"><img class="img" src="assets/model1.jpg" alt="UNITRUS на модели 1" loading="lazy"></div>
-          <div class="card"><img class="img" src="assets/model2.jpg" alt="UNITRUS на модели 2" loading="lazy"></div>
+          <div class="card case-card">
+            <img class="img" src="assets/model1.jpg" alt="Спортивная форма UNITRUS для FIRE RUN INNO" loading="lazy">
+            <span class="case-label">Реальный заказ · форма клуба</span>
+          </div>
+          <div class="card case-card">
+            <img class="img" src="assets/model2.jpg" alt="Комплект UNITRUS на участнике FIRE RUN INNO" loading="lazy">
+            <span class="case-label">FIRE RUN INNO</span>
+          </div>
         </div>
       </div>
     </section>
@@ -1093,7 +1301,7 @@
         <div class="grid3">
           <div class="card pcard">
             <p class="pname">1) Бриф</p>
-            <p class="ptext">Цель, тираж, сроки, budget, референсы и пожелания по стилю.</p>
+            <p class="ptext">Цель, тираж, сроки, бюджет, референсы и пожелания по стилю.</p>
           </div>
           <div class="card pcard">
             <p class="pname">2) Согласование</p>
@@ -1137,7 +1345,7 @@
     <div class="wrap">
       <div style="padding:40px 0; max-width:1100px; margin:0 auto;">
         <h2 style="font-size:24px; margin-bottom:16px;">
-          Corporate одежда и мерч на заказ в Казани
+          Корпоративная одежда и мерч на заказ в Казани
         </h2>
         <p style="color: var(--muted); line-height: 1.6; margin-bottom: 12px;">
           UNITRUS — производство корпоративной одежды и мерча под ключ для бизнеса в Казани и по всей России.
@@ -1244,6 +1452,63 @@
     navDropdown.classList.remove('active');
     floatDropdown.classList.remove('active');
   });
+
+  // Спокойное появление секций при прокрутке.
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealSections = document.querySelectorAll('main > section');
+
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('motion-ready');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    revealSections.forEach((section) => {
+      section.classList.add('reveal-section');
+      revealObserver.observe(section);
+    });
+  }
+
+  // Небольшая глубина только там, где есть мышь или трекпад.
+  const precisePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (precisePointer && !reduceMotion) {
+    const tiltTargets = document.querySelectorAll('.heroVisual, .fabric, .catalog-card');
+
+    tiltTargets.forEach((element) => {
+      const strength = element.classList.contains('heroVisual')
+        ? 4
+        : element.classList.contains('fabric') ? 1.5 : 2.4;
+      let frameId = null;
+
+      element.addEventListener('pointermove', (event) => {
+        if (frameId) cancelAnimationFrame(frameId);
+        frameId = requestAnimationFrame(() => {
+          const rect = element.getBoundingClientRect();
+          const x = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+          const y = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
+          element.style.setProperty('--tilt-x', `${((0.5 - y) * strength).toFixed(2)}deg`);
+          element.style.setProperty('--tilt-y', `${((x - 0.5) * strength).toFixed(2)}deg`);
+          element.style.setProperty('--light-x', `${(x * 100).toFixed(1)}%`);
+          element.style.setProperty('--light-y', `${(y * 100).toFixed(1)}%`);
+        });
+      });
+
+      element.addEventListener('pointerleave', () => {
+        if (frameId) cancelAnimationFrame(frameId);
+        frameId = null;
+        element.style.setProperty('--tilt-x', '0deg');
+        element.style.setProperty('--tilt-y', '0deg');
+        element.style.setProperty('--light-x', '50%');
+        element.style.setProperty('--light-y', '50%');
+      });
+    });
+  }
 
   </script>
 </body>
